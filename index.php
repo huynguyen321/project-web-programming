@@ -1,7 +1,7 @@
 
 
 <?php
-include 'header.php';
-include 'content.php';
-include 'footer.php';
+include './assets/includes/header.php';
+include './assets/includes/content.php';
+include './assets/includes/footer.php';
 ?>
