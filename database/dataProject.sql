@@ -34,9 +34,8 @@ insert into ROM(ROM) values
 -- brand
 create table Brand(
 IDbrand int unsigned auto_increment primary key,
-Brand varchar(6) not null
+Brand varchar(12) not null
 );
-
 insert into Brand(Brand) values
 ('Apple'),
 ('Samsung'),

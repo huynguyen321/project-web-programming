@@ -1,7 +1,5 @@
-
-
 <?php
-include './assets/includes/header.php';
-include './assets/includes/content.php';
-include './assets/includes/footer.php';
+include 'includes/header.inc.php';
+include 'includes/autoLoader.inc.php';
+include 'includes/footer.inc.php';
 ?>

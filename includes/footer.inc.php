@@ -4,7 +4,7 @@
                 <div class="row">
                     <div class="col-md-3">
                         <div class="footer-logo">
-                            <img src="../project/assets/img/logo.jpg" alt="" class="w-75">
+                            <img src="assets/img/logo.jpg" alt="" class="w-75">
 
                             <p class="text-left">Ra đời từ năm 2021, chỉ từ một cửa hàng thời trang nhỏ, đến nay Ngoc Huy Smartphone đã không ngừng phát triển và trở thành một hệ thống cửa hàng chuyên kinh doanh điện thoại
                                 và một số thiết bị điện tử thông minh giúp cho cuộc sống hiện đại và tiện ích hơn</p>
@@ -90,7 +90,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <p>
-                            Copyright by
+                            Copyright© by
                             <a href="#">
                                 Nguyễn Ngọc Huy
                             </a>
