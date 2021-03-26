@@ -7,6 +7,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- bootstrap 4 + jquery -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
@@ -18,157 +19,110 @@
     <script defer src="https://use.fontawesome.com/releases/v5.1.1/js/all.js" integrity="sha384-BtvRZcyfv4r0x/phJt9Y9HhnN5ur1Z+kZbKVgzVBAlQZX4jvAuImlIz+bG7TS00a" crossorigin="anonymous">
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <!-- MDB icon -->
+    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+    <!-- MDB -->
+    <link rel="stylesheet" href="assets/mdb5/css/mdb.min.css" />
+    <link rel="stylesheet" href="assets/mdb5/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/mdb5/css/mdb-pro.min.css" />
+    <link rel="stylesheet" href="assets/mdb5/css/mdb.ecommerce.min.css" />
+    <script type="text/javascript" src="assets/mdb5/js/mdb.min.js"></script>
+    <!-- self -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
     <header class="container-fluid">
-        <!-- main menu on top -->
-        <ul class="main_header">
+        <!--main logo shop -->
+        <ul class="main_logo">
             <li><a href="../index.php"><img id="logo" src="assets/img/logo.jpg" alt="Logo"></a></li>
             <li>
                 <h1>TOP 1 CỬA HÀNG ĐIỆN THOẠI THÔNG MINH</h1>
             </li>
         </ul>
-        <!-- submenu on PC -->
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="..." class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-        <ul class="menu col-12">
-            <li><a href="../index.php"><i class="fas fa-home"></i> Trang chủ</a></li>
-            <li><img src="assets/img/logo-brand/iPhone.jpg" alt="product" width="150px"></li>
-            <li><img src="assets/img/logo-brand/Samsung.jpg" alt="product" width="150px"></li>
-            <li><img src="assets/img/logo-brand/Xiaomi.jpg" alt="product" width="150px"></li>
-            <li><img src="assets/img/logo-brand/OPPO.jpg" alt="product" width="150px"></li>
-            <li><img src="assets/img/logo-brand/Nokia.jpg" alt="product" width="150px"></li>
-            <li><img src="assets/img/logo-brand/Realme.png" alt="product" width="150px"></li>
-            <li><img src="assets/img/logo-brand/Vsmart.png" alt="product" width="150px"></li>
-            <li><img src="assets/img/logo-brand/Vivo.jpg" alt="product" width="150px"></li>
-
-            <li class="drop-menu" href="#"><i class="fa fa-headphones-alt" aria-hidden="true"></i> Phụ kiện
-                <i class="fa fa-caret-down" aria-hidden="true"></i>
-                <ul class="drop-menu-content">
-                    <li href="#">Tai nghe</li>
-                    <li href="#">Cáp sạc</li>
-                    <li href="#">Sạc dự phòng</li>
-                </ul>
-            </li>
-            <li>
-                <form action="" method="post" class="searchBox">
-                    <input class="searchInput" type="text" name="" placeholder="Bạn cần tìm gì?">
-                    <button class="searchButton">
-                        <i class="fa fa-search" aria-hidden="true"></i>
-                    </button>
-                </form>
-            </li>
-            <li>
-                <button class="btn btn-outline-light hide_res"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Giỏ
-                    hàng</button>
-            </li>
-            <li>
-                <button class="btn btn-info hide_res">
-                    <i class="fa fa-sign-in-alt" aria-hidden="true"></i>Đăng nhập/
-                    <i class="fa fa-user-plus" aria-hidden="true"></i>Đăng ký
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-md navbar-light scrolling-navbar navbar-transparent">
+            <a class="navbar-brand text-center" href="../index.php">
+                Trang chủ
+            </a>
+            <form action="" method="post" class="searchBox navbar-brand">
+                <input class="searchInput" type="text" name="" placeholder="Bạn cần tìm gì?">
+                <button class="searchButton">
+                    <i class="fa fa-search" aria-hidden="true"></i>
                 </button>
-            </li>
-            <!-- <li style="display: none">
-                <button class="btn btn-info"><i class="fa fa-sign-out-alt" aria-hidden="true"></i>Đăng xuất</button>
-            </li> -->
-        </ul>
-        <!-- submenu on mobile -->
-        <div class="smMenu">
-            <button id="smMenuBtn"><i class="fas fa-bars"></i></button>
-            <script>
-                $('.sub_header_sm').animate({
-                    height: 'toggle'
-                })
-                $(document).ready(function() {
-                    $('#smMenuBtn').click(function() {
-                        $('.sub_header_sm').animate({
-                            height: 'toggle'
-                        })
-                    })
-                })
-            </script>
-            <ul class="sub_header_sm">
-                <li><a href="../index.php"><i class="fas fa-home"></i> Trang chủ</a></li>
-                <li><i class="fa fa-mobile-alt" aria-hidden="true" href="#"></i>Điện thoại</li>
-                <li><i class="fa fa-laptop" aria-hidden="true" href="#"></i>Laptop</li>
-                <li><i class="fa fa-clock" aria-hidden="true" href="#"></i>Đồng hồ thời trang</li>
-                <li><i class="fa fa-clock" aria-hidden="true" href="#"></i>Đồng hồ thông minh</li>
-                <li class="dropdown" href="#"><i class="fa fa-headphones-alt" aria-hidden="true"></i> Phụ kiện
-                    <i class="fa fa-caret-down" aria-hidden="true"></i>
-                    <ul class="dropdown-content">
-                        <li href="#">Tai nghe</li>
-                        <li href="#">Cáp sạc</li>
-                        <li href="#">Sạc dự phòng</li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-        <!-- menu when scroll screen -->
-        <ul class="scroll_menu fixed-top">
-            <li><a href="../index.php"><i class="fas fa-home"></i> Trang chủ</a></li>
-            <li><i class="fa fa-mobile-alt" aria-hidden="true" href="#"></i>Điện thoại</li>
-            <li><i class="fa fa-laptop" aria-hidden="true" href="#"></i>Laptop</li>
-            <li><i class="fa fa-clock"></i> Đồng hồ thời trang</li>
-            <li><i class="fa fa-clock" aria-hidden="true" href="#"></i>Đồng hồ thông minh</li>
-            <li class="drop-menu" href="#"><i class="fa fa-headphones-alt" aria-hidden="true"></i> Phụ kiện
-                <i class="fa fa-caret-down" aria-hidden="true"></i>
-                <ul class="drop-menu-content">
-                    <li href="#">Tai nghe</li>
-                    <li href="#">Cáp sạc</li>
-                    <li href="#">Sạc dự phòng</li>
-                </ul>
-            </li>
-            <li>
-                <form action="" method="post" class="searchBox">
-                    <input class="searchInput" type="text" name="" placeholder="Bạn cần tìm gì?">
-                    <button class="searchButton">
-                        <i class="fa fa-search" aria-hidden="true"></i>
-                    </button>
-                </form>
-            </li>
-            <li>
-                <button class="btn btn-info hide_res"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Giỏ
-                    hàng</button>
-            </li>
+            </form>
 
-            <li>
-                <button class="btn btn-info hide_res"><i class="fa fa-sign-in-alt" aria-hidden="true"></i>Đăng
-                    nhập</button>
-            </li>
-            <!-- process log in or not log in -->
-            <script></script>
-        </ul>
+            <!-- Collapse button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#reponsiveMenu" aria-controls="reponsiveMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </button>
+
+            <!-- Links -->
+            <div class="collapse navbar-collapse" id="reponsiveMenu">
+
+
+                <!-- Right -->
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item text-center">
+                        <a href="#!" class="nav-link navbar-link-2 waves-effect">
+                            <span class="badge badge-pill red">0</span>
+                            <i class="fas fa-shopping-cart pl-0"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown text-center">
+                        <a class="nav-link dropdown-toggle waves-effect" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            <i class="fa fa-mobile-alt" aria-hidden="true"></i>
+                            Điện thoại
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                            <table>
+                                <tr>
+                                    <td><a class="dropdown-item" href="#"><img src="assets/img/logo-brand/iPhone.jpg" alt="product" width="108px"></a></td>
+                                    <td><a class="dropdown-item" href="#"><img src="assets/img/logo-brand/Samsung.jpg" alt="product" width="108px"></a></td>
+                                    <td><a class="dropdown-item" href="#"><img src="assets/img/logo-brand/Xiaomi.jpg" alt="product" width="108px"></a></td>
+                                </tr>
+                                <tr>
+                                    <td><a class="dropdown-item" href="#"><img src="assets/img/logo-brand/OPPO.jpg" alt="product" width="108px"></a></td>
+                                    <td><a class="dropdown-item" href="#"><img src="assets/img/logo-brand/OPPO.jpg" alt="product" width="108px"></a></td>
+                                    <td><a class="dropdown-item" href="#"><img src="assets/img/logo-brand/Nokia.jpg" alt="product" width="108px"></a></td>
+                                </tr>
+                                <tr>
+                                    <td><a class="dropdown-item" href="#"><img src="assets/img/logo-brand/Realme.png" alt="product" width="108px"></a></td>
+                                    <td><a class="dropdown-item" href="#"><img src="assets/img/logo-brand/Vsmart.png" alt="product" width="108px"></a></td>
+                                    <td><a class="dropdown-item" href="#"><img src="assets/img/logo-brand/Vivo.jpg" alt="product" width="108px"></a></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </li>
+                    <li class="nav-item text-center">
+                        <a href="#" class="nav-link waves-effect">
+                            <i class="fa fa-headphones" aria-hidden="true"></i>
+                            Phụ kiện </a>
+                    </li>
+                    <li class="nav-item text-center">
+                        <a href="#!" class="nav-link waves-effect">
+                            Đăng ký
+                        </a>
+                    </li>
+                    <li class="nav-item pl-2 mb-2 mb-md-0">
+                        <button type="button" class="btn btn-outline-secondary btn-md btn-rounded btn-navbar waves-effect waves-light" style="font-size: 15px; font-weight: bold; padding: 5px 15px;">
+                            ĐĂNG NHẬP</button>
+                    </li>
+                </ul>
+            </div>
+
+        </nav>
+        <!-- Navbar -->
         <script>
-            $('.scroll_menu').hide()
             // Script for top Navigation Menu
-            $(window).bind('scroll', function() {
-                if ($(window).width() > 940) {
-                    if ($(window).scrollTop() > 100) {
-                        $('.scroll_menu').show()
-                    } else {
-                        $('.scroll_menu').hide()
-                    }
+            jQuery(window).bind('scroll', function() {
+                if (jQuery(window).scrollTop() > 100) {
+                    jQuery('.navbar').addClass('fixed-top top-nav-collapse');
+                } else {
+                    jQuery('.navbar').removeClass('fixed-top top-nav-collapse');
                 }
             });
         </script>

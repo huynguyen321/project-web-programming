@@ -4,6 +4,14 @@ body {
     flex-wrap: wrap; */
 }
 
+header {
+    background: #00ccff;
+}
+
+.btn {
+    padding: 5px 10px;
+}
+
 header ul {
     margin: 0;
     padding: 0;
@@ -32,6 +40,13 @@ a {
     text-decoration: none;
 }
 
+.text-center {
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 a:hover {
     color: inherit;
     text-decoration: none;
@@ -40,7 +55,7 @@ a:hover {
 
 /* main header */
 
-.main_header {
+.main_logo {
     background: #00ccff;
     color: #fff1a1;
     list-style-type: none;
@@ -52,7 +67,7 @@ a:hover {
     cursor: pointer;
 }
 
-.main_header li {
+.main_logo li {
     display: flex;
 }
 
@@ -108,7 +123,7 @@ a:hover {
         width: 150px;
         padding: 0 6px;
     }
-    .main_header {
+    .main_logo {
         padding: 0;
         display: flex;
         justify-content: center;
@@ -126,22 +141,57 @@ a:hover {
 .menu {
     background: #00ccff;
     color: #fff1a1;
-    list-style-type: none;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
     font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
 }
 
-.menu li {
-    border-left: 0.5px gray solid;
+.menu_icon {
+    color: #fff1a1;
 }
 
-.menu li:hover {
+.btn_menu {
+    color: #fff1a1;
+    border: 1px #fff1a1 solid;
+}
+
+.menu:hover {
     /* width: ; */
     transition: all 1s;
+}
+
+.menu2 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background: #00ccff;
+    color: #fff1a1;
+}
+
+.menu2 ul {
+    display: flex;
+    flex-direction: row;
+}
+
+.menu2 li {
+    padding-left: 10px;
+    list-style-type: none;
+}
+
+@media screen and (max-width: 760px) {
+    .menu2 {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        background: #00ccff;
+        color: #fff1a1;
+    }
+    .menu2 ul {
+        display: flex;
+        flex-direction: column;
+    }
+    .menu2 li {
+        padding-left: 10px;
+        list-style-type: none;
+    }
 }
 
 .drop-menu:hover .drop-menu-content {
@@ -159,77 +209,6 @@ a:hover {
     width: max-content;
     color: white;
     list-style-type: none;
-}
-
-@media screen and (max-width: 1023px) {
-    .hide_res {
-        display: none;
-    }
-    .menu {
-        display: none;
-    }
-    .menu li {
-        display: none;
-    }
-    .drop-menu-content {
-        display: none;
-    }
-}
-
-
-/* menu on mobile and laptop */
-
-.smMenu {
-    display: none;
-}
-
-@media screen and (max-width: 1023px) {
-    .smMenu {
-        position: relative;
-        background: #00ccff;
-        color: #fff1a1;
-        display: flex;
-        align-items: center;
-        font-size: 18px;
-        cursor: pointer;
-    }
-    #smMenuBtn {
-        position: relative;
-        background: #00ccff;
-        border: 1px #fff1a1 solid;
-        color: white;
-    }
-    .sub_header_sm {
-        display: none;
-        width: 100%;
-        position: static;
-        background: #00a2ff;
-        color: #fff1a1;
-        list-style-type: none;
-        font-size: 20px;
-        font-weight: bold;
-        cursor: pointer;
-    }
-    #smMenuBtn {
-        border-radius: 5px;
-    }
-    .dropdown {
-        position: relative;
-    }
-    .dropdown-content {
-        list-style-type: none;
-        display: none;
-        position: absolute;
-        background-color: #00a2ff;
-        color: #fff1a1;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        padding: 12px 16px;
-        z-index: 1;
-    }
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
 }
 
 
@@ -369,13 +348,17 @@ form.newsletter input[type="submit"]:hover {
 }
 
 .social-icon li a.google-plus {
-    background-image: url(../img/gplus.png);
+    background-image: url(../img/social-icon/gplus.png);
 }
 
-.social-icon li a.twitter {
-    background-image: url(../img/twi.png);
+.social-icon li a.linkedIn {
+    background-image: url(../img/social-icon/in.png);
 }
 
 .social-icon li a.facebook {
-    background-image: url(../img/f.png);
+    background-image: url(../img/social-icon/f.png);
+}
+
+.social-icon li a.twitter {
+    background-image: url(../img/social-icon/twi.png);
 }
