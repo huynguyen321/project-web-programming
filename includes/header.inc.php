@@ -15,16 +15,15 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--font awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
     <script defer src="https://use.fontawesome.com/releases/v5.1.1/js/all.js" integrity="sha384-BtvRZcyfv4r0x/phJt9Y9HhnN5ur1Z+kZbKVgzVBAlQZX4jvAuImlIz+bG7TS00a" crossorigin="anonymous">
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <!-- MDB icon -->
-    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
     <!-- Google Fonts Roboto -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
-    <!-- MDB -->
+    <!-- MDB5 -->
     <link rel="stylesheet" href="assets/mdb5/css/mdb.min.css" />
     <link rel="stylesheet" href="assets/mdb5/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/mdb5/css/mdb-pro.min.css" />
@@ -45,7 +44,7 @@
         </ul>
         <!-- Navbar -->
         <nav class="navbar navbar-expand-md navbar-light scrolling-navbar navbar-transparent">
-            <a class="navbar-brand text-center" href="../index.php">
+            <a class="navbar-brand text-center" href="../index.php" style="font-weight: bold; font-size: 20px;color: #fff1a1">
                 Trang chủ
             </a>
             <form action="" method="post" class="searchBox navbar-brand">
@@ -62,7 +61,6 @@
 
             <!-- Links -->
             <div class="collapse navbar-collapse" id="reponsiveMenu">
-
 
                 <!-- Right -->
                 <ul class="navbar-nav ml-auto">
@@ -108,8 +106,8 @@
                         </a>
                     </li>
                     <li class="nav-item pl-2 mb-2 mb-md-0">
-                        <button type="button" class="btn btn-outline-secondary btn-md btn-rounded btn-navbar waves-effect waves-light" style="font-size: 15px; font-weight: bold; padding: 5px 15px;">
-                            ĐĂNG NHẬP</button>
+                        <a href="#!" type="button" class="nav-link btn btn-outline-secondary btn-rounded btn-navbar waves-effect waves-light">
+                            ĐĂNG NHẬP</a>
                     </li>
                 </ul>
             </div>
