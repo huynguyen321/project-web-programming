@@ -2,7 +2,7 @@
 <html lang="vi">
 
 <head>
-    <title>Huy Smartphone</title>
+    <title>Nga Huy Smartphone</title>
     <link rel="icon" href="assets/img/logo.png">
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -84,11 +84,10 @@
                                 </tr>
                                 <tr>
                                     <td><a class="dropdown-item" href="#"><img src="assets/img/logo-brand/OPPO.jpg" alt="product" width="108px"></a></td>
-                                    <td><a class="dropdown-item" href="#"><img src="assets/img/logo-brand/OPPO.jpg" alt="product" width="108px"></a></td>
                                     <td><a class="dropdown-item" href="#"><img src="assets/img/logo-brand/Nokia.jpg" alt="product" width="108px"></a></td>
+                                    <td><a class="dropdown-item" href="#"><img src="assets/img/logo-brand/Realme.png" alt="product" width="108px"></a></td>
                                 </tr>
                                 <tr>
-                                    <td><a class="dropdown-item" href="#"><img src="assets/img/logo-brand/Realme.png" alt="product" width="108px"></a></td>
                                     <td><a class="dropdown-item" href="#"><img src="assets/img/logo-brand/Vsmart.png" alt="product" width="108px"></a></td>
                                     <td><a class="dropdown-item" href="#"><img src="assets/img/logo-brand/Vivo.jpg" alt="product" width="108px"></a></td>
                                 </tr>

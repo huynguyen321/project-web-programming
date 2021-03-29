@@ -40,14 +40,18 @@
                         //         echo $vote; 
                         ?>
                     </div>
-                    <div class="row">
+                    <div>
                         <button class="float-left btn btn-rounded btn-info waves-effect">
-                            <i class="fa fa-info" aria-hidden="true"></i>
+                            <i class="fa fa-info" ar dia-hidden="true"></i>
                         </button>
-                        <button class="float-right btn btn-rounded btn-warning waves-effect">
-                            <i class="fas fa-cart-plus"></i>
+                        <button class="float-right btn btn-success waves-effect">
+                            <i class="fas fa-cart-plus"></i>Thêm vào giỏ
                         </button>
                     </div>
+
+                </div>
+
+                <div>
 
                 </div>
             </div>
