@@ -7,7 +7,7 @@
                             <img src="assets/img/logo.jpg" alt="" class="w-75">
 
                             <p class="text-left">
-                                Ra đời từ năm 2021, chỉ từ một cửa hàng bán lẻ điện thoại phổ thông, đến nay Ngoc Huy Smartphone đã không ngừng phát triển và trở thành một hệ thống cửa hàng 
+                                Ra đời từ năm 2021, chỉ từ một cửa hàng bán lẻ điện thoại phổ thông, đến nay Nga Huy Smartphone đã không ngừng phát triển và trở thành một hệ thống cửa hàng 
                                 chuyên kinh doanh sỉ lẻ điện thoại thông minh
                         </p>
                         </div>
@@ -75,7 +75,7 @@
                                         console.log(cusemail);
                                         Email.send({
                                             SecureToken: "7f2eb8bb-830f-4487-949d-aff2eac8a00c",
-                                            From: "NgocHuySmartphone@gmail.com",
+                                            From: "NgaHuySmartphone@gmail.com",
                                             To: cusemail,
                                             Subject: "Cảm ơn "+cusname+" đã đăng ký nhận tin ",
                                             Body: 'Bạn đã đăng ký để nhận những thông tin mới nhất thành công '
@@ -96,7 +96,7 @@
                         <p>
                         ©2021 Copyright by
                             <a href="#">
-                                Nguyễn Ngọc Huy
+                                Nguyễn Ngọc Huy & Nguyễn Thị Thanh Nga
                             </a>
                         </p>
                     </div>

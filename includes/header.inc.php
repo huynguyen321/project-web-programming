@@ -37,15 +37,15 @@
     <header class="container-fluid">
         <!--main logo shop -->
         <ul class="main_logo">
-            <li><a href="../index.php"><img id="logo" src="assets/img/logo.jpg" alt="Logo"></a></li>
+            <li><a href="index.php"><img id="logo" src="assets/img/logo.jpg" alt="Logo"></a></li>
             <li>
                 <h1>TOP 1 CỬA HÀNG ĐIỆN THOẠI THÔNG MINH</h1>
             </li>
         </ul>
         <!-- Navbar -->
         <nav class="navbar navbar-expand-md navbar-light scrolling-navbar navbar-transparent">
-            <a class="navbar-brand text-center" href="../index.php" style="font-weight: bold; font-size: 20px;color: #fff1a1">
-                Trang chủ
+            <a class="navbar-brand text-center" href="index.php" style="font-weight: bold; font-size: 20px;color: #fff1a1">
+                <i class="fa fa-home" aria-hidden="true"></i> Trang chủ
             </a>
             <form action="" method="post" class="searchBox navbar-brand">
                 <input class="searchInput" type="text" name="" placeholder="Bạn cần tìm gì?">
