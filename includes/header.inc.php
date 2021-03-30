@@ -1,39 +1,39 @@
-<!doctype html>
-<html lang="vi">
+    <!doctype html>
+    <html lang="vi">
 
-<head>
-    <title>Huy Smartphone</title>
-    <link rel="icon" href="assets/img/logo.png">
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- bootstrap 4 + jquery -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!--font awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
-    <script defer src="https://use.fontawesome.com/releases/v5.1.1/js/all.js" integrity="sha384-BtvRZcyfv4r0x/phJt9Y9HhnN5ur1Z+kZbKVgzVBAlQZX4jvAuImlIz+bG7TS00a" crossorigin="anonymous">
-    </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <!-- Google Fonts Roboto -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
-    <!-- MDB5 -->
-    <link rel="stylesheet" href="assets/mdb5/css/mdb.min.css" />
-    <link rel="stylesheet" href="assets/mdb5/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/mdb5/css/mdb-pro.min.css" />
-    <link rel="stylesheet" href="assets/mdb5/css/mdb.ecommerce.min.css" />
-    <script type="text/javascript" src="assets/mdb5/js/mdb.min.js"></script>
-    <!-- self -->
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
+    <head>
+        <title>Huy Smartphone</title>
+        <link rel="icon" href="assets/img/logo.png">
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- bootstrap 4 + jquery -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+        </script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!--font awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+        <script defer src="https://use.fontawesome.com/releases/v5.1.1/js/all.js" integrity="sha384-BtvRZcyfv4r0x/phJt9Y9HhnN5ur1Z+kZbKVgzVBAlQZX4jvAuImlIz+bG7TS00a" crossorigin="anonymous">
+        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <!-- Google Fonts Roboto -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+        <!-- MDB5 -->
+        <link rel="stylesheet" href="assets/mdb5/css/mdb.min.css" />
+        <link rel="stylesheet" href="assets/mdb5/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="assets/mdb5/css/mdb-pro.min.css" />
+        <link rel="stylesheet" href="assets/mdb5/css/mdb.ecommerce.min.css" />
+        <script type="text/javascript" src="assets/mdb5/js/mdb.min.js"></script>
+        <!-- self -->
+        <link rel="stylesheet" href="assets/css/style.css">
+    </head>
 
-<body>
+    <body>
     <header class="container-fluid">
         <!--main logo shop -->
         <ul class="main_logo">
@@ -106,7 +106,9 @@
                         </a>
                     </li>
                     <li class="nav-item pl-2 mb-2 mb-md-0">
-                        <a href="#!" type="button" class="nav-link btn btn-outline-secondary btn-rounded btn-navbar waves-effect waves-light">
+                        <a href="#!" type="button" 
+                        class="nav-link btn btn-outline-secondary btn-rounded btn-navbar waves-effect waves-light"
+                        data-toggle="modal" data-target="#SignInModal">
                             ĐĂNG NHẬP</a>
                     </li>
                 </ul>
