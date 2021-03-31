@@ -72,9 +72,16 @@
                         </a>
                     </li>
                     <li class="nav-item dropdown text-center">
-                        <a class="nav-link dropdown-toggle waves-effect" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        <a href="/#productSmartphone" class="nav-link waves-effect">
                             <i class="fa fa-mobile-alt" aria-hidden="true"></i>
                             Điện thoại
+                        </a>
+                        <a class="nav-link dropdown-toggle waves-effect"
+                        id="navbarDropdownMenuLink"
+                        data-toggle="dropdown" 
+                        aria-haspopup="true" 
+                        aria-expanded="true"
+                        style="padding:0; margin:10px 10px 15px 0;">
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                             <table>
@@ -96,7 +103,7 @@
                         </div>
                     </li>
                     <li class="nav-item text-center">
-                        <a href="#" class="nav-link waves-effect">
+                        <a href="/#productAccessories" class="nav-link waves-effect">
                             <i class="fa fa-headphones" aria-hidden="true"></i>
                             Phụ kiện </a>
                     </li>

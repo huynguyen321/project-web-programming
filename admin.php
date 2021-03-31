@@ -1,7 +1,7 @@
 <?php
 error_reporting(0);
 if (session_id() === '') session_start();
-include './assets/includes/header.php'
+include './assets/includes/header.inc.php'
 ?>
 
 <body>

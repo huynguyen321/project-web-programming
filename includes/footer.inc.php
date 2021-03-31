@@ -66,9 +66,9 @@
                         </p>
                         <form class="newsletter">
                             <input type="text" id="email" placeholder="Nhập Email....">
-                            <input type="button" value="Đăng ký" 
+                            <button type="button"
                             style="padding: 5px 10px; border-radius: 5px;"
-                            class="btn btn-outline-light" onclick="sendMail()">
+                            class="btn btn-outline-light" onclick="sendMail()">Đăng ký</button>
                             <script>
                                     function sendMail() {
                                         cusemail = $("#email").val();

@@ -23,6 +23,7 @@ h1 {
     font-size: 3vw;
     font-weight: bold;
     text-align: center;
+    font-family: 'Roboto';
     animation: h1 1s ease-in-out infinite alternate;
 }
 
@@ -296,7 +297,6 @@ form.newsletter input[type="submit"]:hover {
 }
 
 .title-catalog span {
-    top: -2vw;
     display: inline-block;
     -webkit-animation: bounce 0.9s ease infinite alternate;
     font-size: 40px;
@@ -338,8 +338,3 @@ form.newsletter input[type="submit"]:hover {
 
 
 /* showcase */
-
-.showcase {
-    display: grid;
-    grid-template-columns: 30% 70%;
-}
