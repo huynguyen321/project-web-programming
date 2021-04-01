@@ -3,7 +3,7 @@
 
 <head>
     <title>Nga Huy Smartphone</title>
-    <link rel="icon" href="assets/img/logo.png">
+    <link rel="icon" href="public/assets/img/logo.png">
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -22,30 +22,27 @@
     <!-- Google Fonts Roboto -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
     <!-- MDB5 -->
-    <link rel="stylesheet" href="assets/mdb5/css/mdb.min.css" />
-    <link rel="stylesheet" href="assets/mdb5/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/mdb5/css/mdb-pro.min.css" />
-    <link rel="stylesheet" href="assets/mdb5/css/mdb.ecommerce.min.css" />
-    <script type="text/javascript" src="assets/mdb5/js/mdb.min.js"></script>
-    <!-- slick master -->
-    <link rel="stylesheet" href="assets/js/slick-master/slick/slick.css">
-    <link rel="stylesheet" href="assets/js/slick-master/slick/slick-theme.css">
+    <link rel="stylesheet" href="public/assets/mdb5/css/mdb.min.css" />
+    <link rel="stylesheet" href="public/assets/mdb5/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="public/assets/mdb5/css/mdb-pro.min.css" />
+    <link rel="stylesheet" href="public/assets/mdb5/css/mdb.ecommerce.min.css" />
+    <script type="text/javascript" src="public/assets/mdb5/js/mdb.min.js"></script>
     <!-- self -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="public/assets/css/style.css">
 </head>
 
 <body>
     <header class="container-fluid">
         <!--main logo shop -->
         <ul class="main_logo">
-            <li><a href="index.php"><img id="logo" src="assets/img/logo.jpg" alt="Logo"></a></li>
+            <li><a href="home"><img id="logo" src="public/assets/img/logo.jpg" alt="Logo"></a></li>
             <li>
                 <h1>TOP 1 CỬA HÀNG ĐIỆN THOẠI THÔNG MINH</h1>
             </li>
         </ul>
         <!-- Navbar -->
         <nav class="navbar navbar-expand-md navbar-light scrolling-navbar navbar-transparent">
-            <a class="navbar-brand text-center" href="index.php" style="font-weight: bold; font-size: 20px;color: #fff1a1">
+            <a class="navbar-brand text-center" href="home" style="font-weight: bold; font-size: 20px;color: #fff1a1">
                 <i class="fa fa-home" aria-hidden="true"></i> Trang chủ
             </a>
             <form action="" method="post" class="searchBox navbar-brand">
@@ -76,28 +73,23 @@
                             <i class="fa fa-mobile-alt" aria-hidden="true"></i>
                             Điện thoại
                         </a>
-                        <a class="nav-link dropdown-toggle waves-effect"
-                        id="navbarDropdownMenuLink"
-                        data-toggle="dropdown" 
-                        aria-haspopup="true" 
-                        aria-expanded="true"
-                        style="padding:0; margin:10px 10px 15px 0;">
+                        <a class="nav-link dropdown-toggle waves-effect" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="padding:0; margin:10px 10px 15px 0;">
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                             <table>
                                 <tr>
-                                    <td><a class="dropdown-item" href="#"><img src="assets/img/logo-brand/iPhone.jpg" alt="product" width="108px"></a></td>
-                                    <td><a class="dropdown-item" href="#"><img src="assets/img/logo-brand/Samsung.jpg" alt="product" width="108px"></a></td>
-                                    <td><a class="dropdown-item" href="#"><img src="assets/img/logo-brand/Xiaomi.jpg" alt="product" width="108px"></a></td>
+                                    <td><a class="dropdown-item" href="#"><img src="public/assets/img/logo-brand/iPhone.jpg" alt="product" width="108px"></a></td>
+                                    <td><a class="dropdown-item" href="#"><img src="public/assets/img/logo-brand/Samsung.jpg" alt="product" width="108px"></a></td>
+                                    <td><a class="dropdown-item" href="#"><img src="public/assets/img/logo-brand/Xiaomi.jpg" alt="product" width="108px"></a></td>
                                 </tr>
                                 <tr>
-                                    <td><a class="dropdown-item" href="#"><img src="assets/img/logo-brand/OPPO.jpg" alt="product" width="108px"></a></td>
-                                    <td><a class="dropdown-item" href="#"><img src="assets/img/logo-brand/Nokia.jpg" alt="product" width="108px"></a></td>
-                                    <td><a class="dropdown-item" href="#"><img src="assets/img/logo-brand/Realme.png" alt="product" width="108px"></a></td>
+                                    <td><a class="dropdown-item" href="#"><img src="public/assets/img/logo-brand/OPPO.jpg" alt="product" width="108px"></a></td>
+                                    <td><a class="dropdown-item" href="#"><img src="public/assets/img/logo-brand/Nokia.jpg" alt="product" width="108px"></a></td>
+                                    <td><a class="dropdown-item" href="#"><img src="public/assets/img/logo-brand/Realme.png" alt="product" width="108px"></a></td>
                                 </tr>
                                 <tr>
-                                    <td><a class="dropdown-item" href="#"><img src="assets/img/logo-brand/Vsmart.png" alt="product" width="108px"></a></td>
-                                    <td><a class="dropdown-item" href="#"><img src="assets/img/logo-brand/Vivo.jpg" alt="product" width="108px"></a></td>
+                                    <td><a class="dropdown-item" href="#"><img src="public/assets/img/logo-brand/Vsmart.png" alt="product" width="108px"></a></td>
+                                    <td><a class="dropdown-item" href="#"><img src="public/assets/img/logo-brand/Vivo.jpg" alt="product" width="108px"></a></td>
                                 </tr>
                             </table>
                         </div>
@@ -134,12 +126,12 @@
     </header>
     <!-- logo brand -->
     <div class="container-fluid text-center logo-brand">
-        <a href="#"><img src="assets/img/logo-brand/iPhone.jpg" alt="product" width="120px"></a>
-        <a href="#"><img src="assets/img/logo-brand/Samsung.jpg" alt="product" width="120px"></a>
-        <a href="#"><img src="assets/img/logo-brand/Xiaomi.jpg" alt="product" width="120px"></a>
-        <a href="#"><img src="assets/img/logo-brand/OPPO.jpg" alt="product" width="120px"></a>
-        <a href="#"><img src="assets/img/logo-brand/Nokia.jpg" alt="product" width="120px"></a>
-        <a href="#"><img src="assets/img/logo-brand/Realme.png" alt="product" width="120px"></a>
-        <a href="#"><img src="assets/img/logo-brand/Vsmart.png" alt="product" width="120px"></a>
-        <a href="#"><img src="assets/img/logo-brand/Vivo.jpg" alt="product" width="120px"></a>
+        <a href="#"><img src="public/assets/img/logo-brand/iPhone.jpg" alt="product" width="120px"></a>
+        <a href="#"><img src="public/assets/img/logo-brand/Samsung.jpg" alt="product" width="120px"></a>
+        <a href="#"><img src="public/assets/img/logo-brand/Xiaomi.jpg" alt="product" width="120px"></a>
+        <a href="#"><img src="public/assets/img/logo-brand/OPPO.jpg" alt="product" width="120px"></a>
+        <a href="#"><img src="public/assets/img/logo-brand/Nokia.jpg" alt="product" width="120px"></a>
+        <a href="#"><img src="public/assets/img/logo-brand/Realme.png" alt="product" width="120px"></a>
+        <a href="#"><img src="public/assets/img/logo-brand/Vsmart.png" alt="product" width="120px"></a>
+        <a href="#"><img src="public/assets/img/logo-brand/Vivo.jpg" alt="product" width="120px"></a>
     </div>

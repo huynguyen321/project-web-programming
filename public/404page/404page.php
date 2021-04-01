@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nga Huy Smartphone</title>
     <link rel="icon" href="../assets/img/logo.png">
+    <link rel="icon" href="../../assets/img/logo.png">
+    <link rel="icon" href="../../../assets/img/logo.png">
     <style>
         * {
             box-sizing: border-box;
@@ -28,8 +30,10 @@
             width: 100%;
             top: 0;
             left: 0;
-            background: #000;
-            background: url('../404page/bg404.jpg');
+            background: black;
+            background: url('./404page/bg404.jpg');
+            background: url('../../404page/bg404.jpg');
+            background: url('../../../404page/bg404.jpg');
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;

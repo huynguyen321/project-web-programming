@@ -1,6 +1,5 @@
 <?php
-include 'includes/header.inc.php';
-include 'includes/carousel.inc.php';
-include 'includes/content.inc.php';
-include 'includes/footer.inc.php';
-?>
+error_reporting(0);
+if (session_id() === '') session_start();
+include './MVC/Bridge.php';
+$myApp = new App();

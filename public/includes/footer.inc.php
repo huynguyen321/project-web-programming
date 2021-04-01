@@ -30,12 +30,12 @@
                         </p>
                     </div>
                     <div class="col-md-3 col-sm-6">
-                        <h4 class="title">
+                        <h6 class="title">
                             Hỗ Trợ
                             <strong>
                                 Khách Hàng
                             </strong>
-                        </h4>
+                        </h6>
                         <ul class="support">
                             <li>
                                 <a href="#">
@@ -55,12 +55,12 @@
                         </ul>
                     </div>
                     <div class="col-md-3">
-                        <h4 class="title">
+                        <h6 class="title">
                             Nhận Thông Tin
                             <strong>
                                 Mới nhất
                             </strong>
-                        </h4>
+                        </h6>
                         <p>
                             Nhập Email đăng ký nhận thông tin
                         </p>
