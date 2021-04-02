@@ -1,6 +1,8 @@
 <!-- CONTROLLER-HOME -->
 <?php
 
+include 'public/includes/header.inc.php';
+include 'public/includes/carousel.inc.php';
 class Home extends Controller
 {
     public function test()

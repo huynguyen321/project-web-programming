@@ -61,7 +61,7 @@ insert into OS(OS) values
 -- smartphone
 create table Smartphone(
 IDphone int unsigned auto_increment primary key,
-PhoneName varchar (35) not null unique,
+PhoneName varchar (35) not null,
 IDbrand int unsigned not null,
 Image varchar(1500) not null,
 Vote float not null default 5,
@@ -71,23 +71,24 @@ foreign key (IDbrand) references Brand(IDbrand)
 insert into Smartphone(PhoneName,IDbrand,Image,Vote) 
 values
 ("iPhone 12 Pro Max",1, 'http://huysmartphone.xyz/public/assets/img/product/smartphone/iphone-12-pro-max-xanh-duong-new-600x600-600x600.jpg',5),
-("Vsmart Star 5",1,'http://huysmartphone.xyz/public/assets/img/product/smartphone/vsmart-star-5-thumb-green-600x600-1-600x600.jpg',4.5),
-("Vivo Y51 2020",1, 'http://huysmartphone.xyz/public/assets/img/product/smartphone/vivo-y51-bac-600x600-600x600.jpg',3);
+("Vsmart Star 5",7,'http://huysmartphone.xyz/public/assets/img/product/smartphone/vsmart-star-5-thumb-green-600x600-1-600x600.jpg',4.5),
+("Vivo Y51 2020",8, 'http://huysmartphone.xyz/public/assets/img/product/smartphone/vivo-y51-bac-600x600-600x600.jpg',3);
 
 --  detail configuration
 create table configuration(
 IDphone int unsigned not null,
 IDram int unsigned not null,
 IDrom int unsigned not null,
-OS varchar(40) not null,
+IDos int unsigned not null,
 Price dec(10,0) not null,
 Discount dec(10,0) default 0,
-foreign key (IDphone) references smartphone(IDphone),
-foreign key (IDram) references RAM(IDram),
-foreign key (IDrom) references ROM(IDrom)
+foreign key (IDphone) references smartphone(IDphone) ON DELETE CASCADE ON UPDATE CASCADE,
+foreign key (IDram) references RAM(IDram) ON DELETE CASCADE ON UPDATE CASCADE,
+foreign key (IDrom) references ROM(IDrom) ON DELETE CASCADE ON UPDATE CASCADE,
+foreign key (IDos) references OS(IDos) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-insert into configuration(IDphone,IDram,IDrom,OS,Price,Discount) 
+insert into configuration(IDphone,IDram,IDrom,IDos,Price,Discount) 
 values
 (1,4,4,1,33900000,31690000),
 (1,4,5,1,35900000,32690000),
@@ -96,25 +97,50 @@ values
 (2,2,4,2,3290000,0),
 (3,5,5,2,5590000,6290000);
 
--- trigger auto update id
+-- procedure auto update id
 
 delimiter //
-create trigger after_smartphone_delete
-after delete on smartphone for each row
+drop procedure if exists updateIDsmartphone //
+create procedure updateIDsmartphone()
 begin
-ALTER TABLE smartphone DROP IDphone;
-ALTER TABLE smartphone ADD IDphone INT NOT NULL AUTO_INCREMENT FIRST, ADD PRIMARY KEY (IDphone), AUTO_INCREMENT=1 ;
+	declare finished int default 0;
+    declare count int default 0;
+	declare idNow int default 0;
+    declare maxID int default 0;
+	declare curID cursor for select IDphone from Smartphone order by IDphone asc;
+    declare continue handler for not found set finished = 1;    
+    open curID;
+	set maxID = (select max(IDphone) from smartphone);
+    label_ID: loop
+		if finished = 1 then
+			leave label_ID;
+        end if;
+        fetch curID into idNow;
+        set count = count + 1;
+        
+        if count > maxID then
+			leave label_ID;
+        end if;
+        
+        if (idNow != count) then
+        UPDATE Smartphone
+			SET  IDphone = count
+			WHERE IDphone = idNow;
+        end if;
+    end loop label_ID;
+    close curID;
 end //
 delimiter ;
+-- show triggers from product;
 
 -- trigger update view smartphone
 
-drop view if exists viewSmartphone;
-create algorithm = merge
-view viewSmartphone (IDphone, PhoneName, Brand ,Ram, Rom, OS, Price, Discount, Image, Vote) as
-select s.IDphone , s.PhoneName, b.Brand, ram.RAM, rom.ROM, os.OS, c.Price, c.Discount, s.Image, s.Vote 
-from Smartphone s, brand b, rom, ram, os, configuration c
-where  s.IDphone = c.IDphone and ;
+-- drop view if exists viewSmartphone;
+-- create algorithm = merge
+-- view viewSmartphone (IDphone, PhoneName, Brand ,Ram, Rom, OS, Price, Discount, Image, Vote) as
+-- select s.IDphone , s.PhoneName, b.Brand, ram.RAM, rom.ROM, os.OS, c.Price, c.Discount, s.Image, s.Vote 
+-- from Smartphone s, brand b, rom, ram, os, configuration c
+-- where  s.IDphone = c.IDphone and ;
 
 
 -- delimiter //
@@ -124,6 +150,10 @@ where  s.IDphone = c.IDphone and ;
 -- if exists v
 -- end //
 -- delimiter ;
+
+-- create fulltext index to use fulltext search
+CREATE FULLTEXT INDEX seachSmartphone
+ON RAM(idx_column_name,...)
 
 
 --  accessories
@@ -136,8 +166,6 @@ Discount int default null,
 Image varchar(800) default null,
 `Description` varchar (1000) default null
 );
-
-
 
 insert into accessories(NameAccessories,Price,Discount,`Description`)
 values
@@ -156,5 +184,5 @@ Kết nối không dây Bluetooth 5.0 ổn định với phạm vi xa đến 10 
 Đạt chuẩn kháng nước IPX4, chống thấm nước hiệu quả.
 Thời gian đàm thoại 5 giờ, nghe nhạc 4 tiếng, sạc 1.5 giờ, chờ tối đa 300 giờ.');
 
-
+select * from accessories;
 
