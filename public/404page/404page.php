@@ -31,9 +31,9 @@
             top: 0;
             left: 0;
             background: black;
-            background: url('./404page/bg404.jpg');
-            background: url('../../404page/bg404.jpg');
-            background: url('../../../404page/bg404.jpg');
+            background: url('.public/404page/bg404.jpg');
+            background: url('../../public/404page/bg404.jpg');
+            background: url('../../../public/404page/bg404.jpg');
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;

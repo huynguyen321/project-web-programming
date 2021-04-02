@@ -4,7 +4,7 @@
                 <div class="row">
                     <div class="col-md-3">
                         <div class="footer-logo">
-                            <img src="assets/img/logo.jpg" alt="" class="w-75">
+                            <img src="http://huysmartphone.xyz/public/assets/img/logo.jpg" alt="" class="w-75">
 
                             <p class="text-left">
                                 Ra đời từ năm 2021, chỉ từ một cửa hàng bán lẻ điện thoại phổ thông, đến nay Nga Huy Smartphone đã không ngừng phát triển và trở thành một hệ thống cửa hàng 

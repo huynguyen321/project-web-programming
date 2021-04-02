@@ -2,19 +2,19 @@
   <div id="carousel" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="public/assets/img/carousel/carousel1.jpg" class="d-block w-100" alt="...">
+        <img src="http://huysmartphone.xyz/public/assets/img/carousel/carousel1.jpg" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="public/assets/img/carousel/carousel2.jpg" class="d-block w-100" alt="...">
+        <img src="http://huysmartphone.xyz/public/assets/img/carousel/carousel2.jpg" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="public/assets/img/carousel/carousel3.jpg" class="d-block w-100" alt="...">
+        <img src="http://huysmartphone.xyz/public/assets/img/carousel/carousel3.jpg" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="public/assets/img/carousel/carousel4.jpg" class="d-block w-100" alt="...">
+        <img src="http://huysmartphone.xyz/public/assets/img/carousel/carousel4.jpg" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="public/assets/img/carousel/carousel5.jpg" class="d-block w-100" alt="...">
+        <img src="http://huysmartphone.xyz/public/assets/img/carousel/carousel5.jpg" class="d-block w-100" alt="...">
       </div>
     </div>
     <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
