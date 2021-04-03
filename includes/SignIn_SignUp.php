@@ -184,73 +184,79 @@
 	}
 </style>
 
+
 <div class="modal fade" id="SignInModal" tabindex="-1" role="dialog" aria-labelledby="SignInModalLabel" aria-hidden="true">
-<div class="modal-dialog" role="document">
-  <div class="modal-content" style="width: 60vw; height: 50px">
-    <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content" style="width: 60vw; height: 50px">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
-    </div>
-    <div class="modal-body">
+			</div>
+			<div class="modal-body">
+				<!-- Sign up -->
+				<div class="container-log-in-out mt-5" id="container">
+					<div class="form-container sign-up-container mt-2">
+						<form class="form-log-in-out" action="classes/SignUp.php" method="post">
+							<h2 class="font-weight-bold">Tạo tài khoản</h2>
+							<input type="text" class="input-log-in-out" name="name" placeholder="Họ và tên" required />
+							<input type="text" class="input-log-in-out" name="username" placeholder="Tên đăng nhập" required />
+							<input type="email" class="input-log-in-out" name="email" placeholder="Email" required />
+							<input type="tel" class="input-log-in-out" name="phonenumber" pattern="[0]{1}[0-9]{9}"
+        placeholder="Điện thoại" required />
+							<input type="text" class="input-log-in-out" name="address" placeholder="Địa chỉ" required />
+							<input type="password" class="input-log-in-out" name="password" placeholder="Mật khẩu" required />
+							<button class="btn btn-info btn-rounded" id="add" name="add">Đăng kí</button>
+						</form>
+					</div>
 
-      <div class="container-log-in-out mt-5" id="container">
-        <div class="form-container sign-up-container mt-2">
-          <form class="form-log-in-out" action="#">
-            <h1 class="font-weight-bold">Create Account</h1>
-            
-            <input type="text" class="input-log-in-out" placeholder="Name" />
-            <input type="email" class="input-log-in-out" placeholder="Email" />
-            <input type="password" class="input-log-in-out" placeholder="Password" />
-            <button class="btn btn-info btn-rounded">Sign up</button>
-          </form>
-        </div>
+					<div class="form-container sign-in-container">
+						<form class="form-log-in-out" name="login"action="classes/SignIn.php" method="post">
+							<h2 class="font-weight-bold">Đăng nhập</h2>
 
-        <div class="form-container sign-in-container">
-          <form class="form-log-in-out" action="#">
-            <h1 class="font-weight-bold">Sign in</h1>
-          
-            <span>or use your account</span>
-            <input type="email" class="input-log-in-out" placeholder="Email" />
-            <input type="password" class="input-log-in-out" placeholder="Password" />
-            <button class="btn btn-info btn-rounded ">Sign In</button>
-          </form>
-        </div>
+							<!-- Sign in -->
+							<input type="text" name="userName" class="input-log-in-out" name ="userName" placeholder="Tên đăng nhập" required/>
+							<input type="password" name="password" class="input-log-in-out" name="password" placeholder="Mật khẩu" required/>
+							<button class="btn btn-info btn-rounded " id="Dangnhap" name="Dangnhap">Đăng nhập</button>
+						</form>
+					</div>
 
-        <div class="overlay-container">
-          <div class="overlay-log-in-out">
-            <div class="overlay-panel overlay-left">
-              <h1 class="font-weight-bold">Good to see you!
-                <h1>
-                  <p class="log-in-out-text">You already have an account? <br>Sign in!</p>
-                  <button class="but" id="signIn">Sign In</button>
-            </div>
-            <div class="overlay-panel overlay-right">
-              <h1 class="font-weight-bold">Hello, Friend!</h1>
-              <p class="log-in-out-text">You don't have account yet? Don't worry! You still can join us</p>
-              <button class="but" id="signUp">Sign Up</button>
-            </div>
-          </div>
-        </div>
-      </div>
+					<div class="overlay-container">
+						<div class="overlay-log-in-out">
+							<div class="overlay-panel overlay-left">
+								<h2 class="font-weight-bold">Rất vui được gặp bạn!
+									<h2>
+										<p class="log-in-out-text">Bạn đã có tài khoản chưa? <br>Đăng nhập!</p>
+										<button class="but" id="signIn">Đăng nhập</button>
+							</div>
+							<div class="overlay-panel overlay-right">
+								<h2 class="font-weight-bold">Xin chào bạn!</h2>
+								<p class="log-in-out-text">Bạn chưa có tài khoản? Đừng lo lắng! Bạn vẫn có thể tham gia với chúng tôi</p>
+								<button class="but" id="signUp">Đăng kí</button>
+							</div>
+						</div>
+					</div>
+				</div>
 
-    </div>
+			</div>
 
 
-  </div>
+		</div>
+	</div>
 </div>
-</div>
 
-	<script>
-		const signUpButton = document.getElementById('signUp');
-		const signInButton = document.getElementById('signIn');
-		const container = document.getElementById('container');
+<script>
+	const signUpButton = document.getElementById('signUp');
+	const signInButton = document.getElementById('signIn');
+	const container = document.getElementById('container');
 
-		signUpButton.addEventListener('click', () => {
-			container.classList.add('right-panel-active');
-		});
+	signUpButton.addEventListener('click', () => {
+		container.classList.add('right-panel-active');
+	});
 
-		signInButton.addEventListener('click', () => {
-			container.classList.remove('right-panel-active');
-		});
-	</script>
+	signInButton.addEventListener('click', () => {
+		container.classList.remove('right-panel-active');
+	});
+</script>
+
+
