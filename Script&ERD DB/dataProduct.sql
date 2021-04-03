@@ -65,7 +65,8 @@ PhoneName varchar (35) not null,
 IDbrand int unsigned not null,
 Image varchar(1500) not null,
 Vote float not null default 5,
-foreign key (IDbrand) references Brand(IDbrand)
+foreign key (IDbrand) references Brand(IDbrand),
+fulltext key PhoneName(PhoneName)
 );
 
 insert into Smartphone(PhoneName,IDbrand,Image,Vote) 
@@ -131,40 +132,60 @@ begin
     close curID;
 end //
 delimiter ;
+
+call updateIDsmartphone;
+
 -- show triggers from product;
 
 -- trigger update view smartphone
+delimiter //
+drop procedure if exists updateViewSmartphone //
+create procedure updateViewSmartphone()
+begin
+	drop view if exists viewSmartphone;
+	create algorithm = merge
+	view viewSmartphone (IDphone, PhoneName, Brand ,Ram, Rom, OS, Price, Discount, Image, Vote) as
+		select s.IDphone , s.PhoneName, b.Brand, RAM.RAM, ROM.ROM, OS.OS, c.Price, c.Discount, s.Image, s.Vote 
+		from Smartphone s, Brand b, ROM, RAM, OS, configuration c
+		where (s.IDphone = c.IDphone and s.IDbrand = b.IDbrand 
+			and RAM.IDram = c.IDram and ROM.IDrom = c.IDrom
+			and OS.IDos = c.IDos)
+            order by s.IDphone asc;
+end //
+delimiter ;
 
--- drop view if exists viewSmartphone;
--- create algorithm = merge
--- view viewSmartphone (IDphone, PhoneName, Brand ,Ram, Rom, OS, Price, Discount, Image, Vote) as
--- select s.IDphone , s.PhoneName, b.Brand, ram.RAM, rom.ROM, os.OS, c.Price, c.Discount, s.Image, s.Vote 
--- from Smartphone s, brand b, rom, ram, os, configuration c
--- where  s.IDphone = c.IDphone and ;
+call updateViewSmartphone;
+select * from viewSmartphone;
 
+-- use fulltext search smartphone
+delimiter //
+drop procedure if exists searchSmartphone //
+create procedure searchSmartphone(in namePhone varchar(250))
+begin
+set namePhone = namePhone + "*";
+	select s.IDphone , s.PhoneName, b.Brand, RAM.RAM, ROM.ROM, OS.OS, c.Price, c.Discount, s.Image, s.Vote 
+		from Smartphone s, Brand b, ROM, RAM, OS, configuration c
+		where 
+        MATCH(PhoneName) AGAINST(namePhone IN NATURAL LANGUAGE MODE)
+			and s.IDphone = c.IDphone and s.IDbrand = b.IDbrand 
+			and RAM.IDram = c.IDram and ROM.IDrom = c.IDrom
+			and OS.IDos = c.IDos
+            order by s.IDphone asc;
+end //
+delimiter ;
 
--- delimiter //
--- create trigger after_smartphone_insert
--- after insert on smartphone for each row
--- begin
--- if exists v
--- end //
--- delimiter ;
-
--- create fulltext index to use fulltext search
-CREATE FULLTEXT INDEX seachSmartphone
-ON RAM(idx_column_name,...)
+call searchSmartphone('vi');	
 
 
 --  accessories
-
 create table accessories(
 IDaccessories int auto_increment primary key,
 NameAccessories varchar(70) not null,
 Price int not null,
 Discount int default null,
 Image varchar(800) default null,
-`Description` varchar (1000) default null
+`Description` varchar (1000) default null,
+fulltext key NameAccessories(NameAccessories)
 );
 
 insert into accessories(NameAccessories,Price,Discount,`Description`)

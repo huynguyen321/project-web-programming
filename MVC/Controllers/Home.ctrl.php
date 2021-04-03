@@ -1,8 +1,6 @@
 <!-- CONTROLLER-HOME -->
 <?php
 
-include 'public/includes/header.inc.php';
-include 'public/includes/carousel.inc.php';
 class Home extends Controller
 {
     public function test()
@@ -14,6 +12,11 @@ class Home extends Controller
         // View
         $tong = $a->sum(6,5);
         $this->View("Accessories",['Number'=>$tong]);
+    }
+
+    public function homePage(){
+        $a = $this->Model("Home");
+        $this->View("Home",[]);
     }
 
 }

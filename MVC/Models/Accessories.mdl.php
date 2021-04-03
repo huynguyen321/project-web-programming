@@ -10,7 +10,7 @@ class Accessories {
 
     public function getNameProduct(){
         //connect DB
-        echo "Monsiur Tuna";
+        echo "Monsier Tuna";
     }
 
     public function sum($a,$b){

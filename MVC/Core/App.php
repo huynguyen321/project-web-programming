@@ -5,7 +5,7 @@ class App
     //http://domain/controller/action/param/..
     //       domain/  url[0] /url[1]/url[2]...
     private $controller = "Home";
-    private $action = "";
+    private $action = "homePage";
     private $params = [];
 
     public function __construct()
