@@ -55,7 +55,7 @@
                         <td>$PhoneNumber</td>
                         <td>$Address</td>
                         <td>
-                        <a href = 'delete.php?id=$IDuser'><i class='fas fa-lock' color='red'></i></a>
+                        <a href = 'classes/blockUser.class.php?id=$IDuser'><i class='fas fa-lock' color='red'></i></a>
                         </td></tr></thead>
    
                         ";

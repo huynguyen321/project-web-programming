@@ -66,6 +66,7 @@ class User{
     }
 
     public function addUser(){
+        $sql1 = "SELECT `UserName` FROM user WHERE UserName = 'this->getUserName()'"
         $sql = "INSERT INTO `user`(`Name`,`UserName`,`Email`, `PhoneNumber`,`Address`, `Password`) 
         values 
         ('".$this->getName().
@@ -81,9 +82,13 @@ class User{
             echo "<script>alert('You have created account successfully')</script>";
           } else {
             echo "<script>alert('User: " .$this->getUserName(). " already exist')</script>";
+            
           }
           $connect->close();
+          
     }
+
+   
 
     public function Login($userName, $password){  
         $res = mysql_query("SELECT * FROM users WHERE emailid = '".$userName."' AND password = '".md5($password)."'");  
