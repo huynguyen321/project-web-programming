@@ -47,9 +47,11 @@
                                 ?>
                             </p>
                             <div>
-                                <button class="float-left btn btn-rounded btn-info waves-effect">
-                                    <i class="fa fa-info" aria-hidden="true"></i>
-                                </button>
+                                <a href="">
+                                    <button class="float-left btn btn-rounded btn-info waves-effect">
+                                        <i class="fa fa-info" aria-hidden="true"></i>
+                                    </button>
+                                </a>
                                 <button class="float-right btn btn-warning waves-effect">
                                     <i class="fas fa-cart-plus"></i><b>Thêm vào giỏ</b>
                                 </button>

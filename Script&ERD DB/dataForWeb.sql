@@ -221,3 +221,24 @@ delimiter ;
 
 -- call searchAccessories("pw");
 
+
+--  User 
+
+create table Users (
+IDuser int unsigned primary key auto_increment,
+`Name` varchar(250) not null,
+`UserName` varchar(250) not null unique,
+`Email` varchar(450) not null,
+`PhoneNumber` varchar(11) not null,
+`Address` varchar(250) not null,
+`Password`varchar(250) not null,
+`Blocked` bit default 0
+);
+
+create table Orders(
+IDproduct int unsigned not null,
+IDuser int unsigned not null,
+TypeProduct varchar(30),
+foreign key (IDuser) references Users(IDuser),
+`Status` varchar(35) default 'Chờ xử lý'
+);

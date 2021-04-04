@@ -1,17 +1,13 @@
 <?php
 
  class Smartphone extends Connect{
-    // abstract set method
-    // public function setNameProduct();
-    // public function setPriceProduct();
-    // public function setDiscountProduct();
-    // abstract get method
     public function getAllSmartphone(){
-        $sql = "select * from viewSmartphone;";
+        $sql = "SELECT * from viewSmartphone;";
         return $this->conn->query($sql);
-
     }
 
-    // public function getPriceProduct();
-    // public function getDiscountProduct();
+    public function showDetail($IDsmartphone){
+        $sql = "SELECT * from viewSmartphone where IDphone = $IDsmartphone;";
+        return $this->conn->query($sql);
+    }
 }

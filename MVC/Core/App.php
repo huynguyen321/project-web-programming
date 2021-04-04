@@ -5,23 +5,24 @@ class App
     //http://domain/controller/action/param/..
     //       domain/  url[0] /url[1]/url[2]...
     private $controller = "Home";
-    private $action = "homePage";
+    private $action = "Default";
     private $params = [];
 
     public function __construct()
     {
         $url = $this->processURL();
-
         // process controller
+        
         if (file_exists('./MVC/Controllers/' . $url[0] . '.ctrl.php')) {
+            $this->controller = $url[0];
             require_once './MVC/Controllers/' . $url[0] . '.ctrl.php';
             unset($url[0]);
         } else if (empty($url[0])) {
             require_once './MVC/Controllers/' . $this->controller . '.ctrl.php';
         } else {
             require_once './MVC/Controllers/Error.ctrl.php';
-            return false;
         }
+        
         $this->controller = new $this->controller;
 
         // process Action
@@ -31,7 +32,6 @@ class App
                 unset($url[1]);
             } else {
                 require_once './MVC/Controllers/Error.ctrl.php';
-                return false;
             }
         }
 

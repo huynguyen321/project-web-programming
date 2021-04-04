@@ -99,12 +99,13 @@
                             Phụ kiện </a>
                     </li>
                     <li class="nav-item text-center">
-                        <a href="#!" class="nav-link waves-effect">
+                        <a class="nav-link waves-effect" id="signUp2" data-toggle="modal" data-target="#SignInSignUpModal">
                             Đăng ký
                         </a>
                     </li>
                     <li class="nav-item pl-2 mb-2 mb-md-0">
-                        <a href="#!" type="button" class="nav-link btn btn-outline-secondary btn-rounded btn-navbar waves-effect waves-light">
+                        <a type="button" class="nav-link btn btn-outline-secondary btn-rounded btn-navbar waves-effect waves-light" id="signIn2"
+                        data-toggle="modal" data-target="#SignInSignUpModal">
                             ĐĂNG NHẬP</a>
                     </li>
                 </ul>
