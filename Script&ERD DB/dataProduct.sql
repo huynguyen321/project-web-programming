@@ -1,6 +1,8 @@
-create database product;
-use product;
-
+create database ourwebsite;
+use ourwebsite;
+CREATE USER 'huy'@'localhost' IDENTIFIED by '123456';
+GRANT all privileges ON *.* TO 'huy'@'localhost';
+FLUSH PRIVILEGES;
 -- smartphone
 
 -- ram
@@ -155,18 +157,18 @@ end //
 delimiter ;
 
 call updateViewSmartphone;
-select * from viewSmartphone;
+-- select * from viewSmartphone;
 
 -- use fulltext search smartphone
 delimiter //
 drop procedure if exists searchSmartphone //
 create procedure searchSmartphone(in namePhone varchar(250))
 begin
-set namePhone = namePhone + "*";
+set namePhone = concat(namePhone,"*");
 	select s.IDphone , s.PhoneName, b.Brand, RAM.RAM, ROM.ROM, OS.OS, c.Price, c.Discount, s.Image, s.Vote 
 		from Smartphone s, Brand b, ROM, RAM, OS, configuration c
 		where 
-        MATCH(PhoneName) AGAINST(namePhone IN NATURAL LANGUAGE MODE)
+        MATCH(PhoneName) AGAINST(namePhone IN BOOLEAN MODE)
 			and s.IDphone = c.IDphone and s.IDbrand = b.IDbrand 
 			and RAM.IDram = c.IDram and ROM.IDrom = c.IDrom
 			and OS.IDos = c.IDos
@@ -174,21 +176,20 @@ set namePhone = namePhone + "*";
 end //
 delimiter ;
 
-call searchSmartphone('vi');	
-
+-- call searchSmartphone('v');	
 
 --  accessories
 create table accessories(
 IDaccessories int auto_increment primary key,
-NameAccessories varchar(70) not null,
+AccessoriesName varchar(70) not null,
 Price int not null,
 Discount int default null,
 Image varchar(800) default null,
 `Description` varchar (1000) default null,
-fulltext key NameAccessories(NameAccessories)
+fulltext key AccessoriesName(AccessoriesName)
 );
 
-insert into accessories(NameAccessories,Price,Discount,`Description`)
+insert into accessories(AccessoriesName,Price,Discount,`Description`)
 values
 ('Sạc dự phòng Xmobile PW3Y5B',650000,331000,'Sạc dự phòng 10.000mAh. Có 2 cổng ra USB , 1 cổng ra/vào Type-C và 1 cổng vào Micro USB.'),
 ('Sạc dự phòng eSaver PJ JP106S',650000,390000,'Sạc dự phòng 10.000mAh. Có 1 cổng ra USB , 1 cổng ra/vào Type-C, cổng vào Micro USB và 1 đèn Led tiện dụng.'),
@@ -205,5 +206,18 @@ Kết nối không dây Bluetooth 5.0 ổn định với phạm vi xa đến 10 
 Đạt chuẩn kháng nước IPX4, chống thấm nước hiệu quả.
 Thời gian đàm thoại 5 giờ, nghe nhạc 4 tiếng, sạc 1.5 giờ, chờ tối đa 300 giờ.');
 
-select * from accessories;
+-- use fulltext search accessories
+delimiter //
+drop procedure if exists searchAccessories //
+create procedure searchAccessories(in nameAccessories varchar(250))
+begin
+set nameAccessories = concat(nameAccessories,"*");
+	select*
+		from accessories
+		where MATCH(AccessoriesName) AGAINST(nameAccessories IN BOOLEAN MODE)
+            order by IDaccessories asc;
+end //
+delimiter ;
+
+-- call searchAccessories("pw");
 

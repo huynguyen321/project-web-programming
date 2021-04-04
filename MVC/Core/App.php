@@ -18,7 +18,10 @@ class App
             unset($url[0]);
         } else if (empty($url[0])) {
             require_once './MVC/Controllers/' . $this->controller . '.ctrl.php';
-        } else require_once './MVC/Controllers/Error.ctrl.php';
+        } else {
+            require_once './MVC/Controllers/Error.ctrl.php';
+            return false;
+        }
         $this->controller = new $this->controller;
 
         // process Action
@@ -26,7 +29,10 @@ class App
             if (method_exists($this->controller, $url[1])) {
                 $this->action = $url[1];
                 unset($url[1]);
-            } else require_once './MVC/Controllers/Error.ctrl.php';
+            } else {
+                require_once './MVC/Controllers/Error.ctrl.php';
+                return false;
+            }
         }
 
         // process Param
@@ -35,7 +41,6 @@ class App
         if (method_exists($this->controller, $this->action)) {
             call_user_func_array([$this->controller, $this->action], $this->params);
         } else require_once './MVC/Controllers/Home.ctrl.php';
-
         //call_user_func_array([class, method],params);
     }
 

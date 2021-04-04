@@ -3,7 +3,7 @@
 
 <head>
     <title>Nga Huy Smartphone</title>
-    <link rel="icon" href="http://huysmartphone.xyz/public/assets/img/logo.png">
+    <link rel="icon" href="http://huysmartphone.xyz/public/assets/img/icon_logo.jpg">
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="http://huysmartphone.xyz/public/assets/mdb5/css/bootstrap.min.css" />
     <link rel="stylesheet" href="http://huysmartphone.xyz/public/assets/mdb5/css/mdb-pro.min.css" />
     <link rel="stylesheet" href="http://huysmartphone.xyz/public/assets/mdb5/css/mdb.ecommerce.min.css" />
-    <script type="text/javascript" src="public/assets/mdb5/js/mdb.min.js"></script>
+    <script type="text/javascript" src="http://huysmartphone.xyz/public/assets/mdb5/js/mdb.min.js"></script>
     <!-- self -->
     <link rel="stylesheet" href="http://huysmartphone.xyz/public/assets/css/style.css">
 
@@ -36,14 +36,14 @@
     <header class="container-fluid">
         <!--main logo shop -->
         <ul class="main_logo">
-            <li><a href="home"><img id="logo" src="http://huysmartphone.xyz/public/assets/img/logo.jpg" alt="Logo"></a></li>
+            <li><a href="http://huysmartphone.xyz"><img id="logo" src="http://huysmartphone.xyz/public/assets/img/logo.jpg" alt="Logo"></a></li>
             <li>
                 <h1>TOP 1 CỬA HÀNG ĐIỆN THOẠI THÔNG MINH</h1>
             </li>
         </ul>
         <!-- Navbar -->
         <nav class="navbar navbar-expand-md navbar-light scrolling-navbar navbar-transparent">
-            <a class="navbar-brand text-center" href="home" style="font-weight: bold; font-size: 20px;color: #fff1a1">
+            <a class="navbar-brand text-center" href="http://huysmartphone.xyz" style="font-weight: bold; font-size: 20px;color: #fff1a1">
                 <i class="fa fa-home" aria-hidden="true"></i> Trang chủ
             </a>
             <form action="" method="post" class="searchBox navbar-brand">

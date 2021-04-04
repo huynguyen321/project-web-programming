@@ -1,4 +1,3 @@
-<!-- CONTROLLER-HOME -->
 <?php
 
 class Home extends Controller
@@ -10,13 +9,17 @@ class Home extends Controller
         // echo $a->getNameProduct();
 
         // View
-        $tong = $a->sum(6,5);
-        $this->View("Accessories",['Number'=>$tong]);
+        $tong = $a->sum(6, 5);
+        $this->View("Accessories", ['Number' => $tong]);
     }
 
-    public function homePage(){
-        $a = $this->Model("Home");
-        $this->View("Home",[]);
-    }
+    public function homePage()
+    {
+        $smartphone = $this->Model('Smartphone');
 
+        $this->View("Home", [
+            "Page" => "Smartphone",
+            "Smartphone" => $smartphone->getAllSmartphone()
+        ]);
+    }
 }

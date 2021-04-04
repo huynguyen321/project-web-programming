@@ -27,3 +27,13 @@
     </a>
   </div>
 </section>
+
+<div class="container">
+  <p class="title-catalog">
+    <span>Mua Ngay !&nbsp;</span>
+    <span>Ưu&nbsp;</span>
+    <span>Đãi&nbsp;</span>
+    <span>Liền&nbsp;</span>
+    <span>Tay</span>
+  </p>
+</div>
