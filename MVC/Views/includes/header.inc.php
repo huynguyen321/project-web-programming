@@ -19,8 +19,6 @@
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <!-- Google Fonts Roboto -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
     <!-- MDB5 -->
     <link rel="stylesheet" href="http://huysmartphone.xyz/public/assets/mdb5/css/mdb.min.css" />
     <link rel="stylesheet" href="http://huysmartphone.xyz/public/assets/mdb5/css/bootstrap.min.css" />

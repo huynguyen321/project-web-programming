@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@7    00&display=swap');
 body {
-    font-family: 'Lobster';
+    font-family: 'Roboto Slab';
     /* display: flex;
     flex-wrap: wrap; */
 }
@@ -23,7 +24,7 @@ h1 {
     font-size: 3vw;
     font-weight: bold;
     text-align: center;
-    font-family: 'Roboto';
+    font-family: 'Roboto Slab';
     animation: h1 1s ease-in-out infinite alternate;
 }
 
@@ -299,6 +300,7 @@ form.newsletter input[type="submit"]:hover {
 
 .title-catalog span {
     display: inline-block;
+    font-family: 'Lobster';
     -webkit-animation: bounce 0.9s ease infinite alternate;
     font-size: 40px;
     color: #fff;
