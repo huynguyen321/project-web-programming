@@ -223,6 +223,7 @@ delimiter ;
 
 
 --  User 
+use ourwebsite;
 create table Users (
 IDuser int unsigned primary key auto_increment,
 `Name` varchar(250) not null,
@@ -241,4 +242,5 @@ TypeProduct varchar(30),
 foreign key (IDuser) references Users(IDuser) ON DELETE CASCADE ON UPDATE CASCADE,
 `Status` varchar(35) default 'Chờ xử lý'
 );
+
 

@@ -1,21 +1,12 @@
 <?php
-class Accessories {
-
-    //set method
-    // public function setNameProduct(){};
-
-    // public function setPriceProduct();
-    // public function setDiscountProduct();
-    // get method
-
-    public function getNameProduct(){
-        //connect DB
-        echo "Monsier Tuna";
+class Accessories extends Connect{
+    public function getAllAccessories(){
+        $sql = "SELECT * from Accessories;";
+        return $this->conn->query($sql);
     }
 
-    public function sum($a,$b){
-        return $a + $b;
+    public function showDetail($IDaccessories){
+        $sql = "SELECT * from Accessories where IDaccessories = $IDaccessories;";
+        return $this->conn->query($sql);
     }
-    // public function getPriceProduct();
-    // public function getDiscountProduct();
 }

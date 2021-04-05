@@ -23,7 +23,7 @@
                     </div>
 
                     <div class="form-container sign-in-container">
-                        <form class="form-log-in-out" name="login" action="/SignIn" method="post">
+                        <form class="form-log-in-out" name="login" action="User/SignIn" method="post">
                             <h2 class="font-weight-bold">Đăng nhập</h2>
 
                             <!-- Sign in -->

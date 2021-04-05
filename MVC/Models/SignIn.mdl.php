@@ -1,12 +1,18 @@
 <?php
 
- class SignIn extends Connect{
-   public function checkUserName($newUser){
-   $sql = "select UserName from Users where UserName = '".$newUser['username']."'";
-   $result = $this->conn->query($sql);
-   if ($result->num_rows) {
-      echo "<script>alert('Tên đăng nhập đã tồn tại!')";
-      header('Location: http://huysmartphone.xyz');
-   }
+class SignIn extends Connect
+{
+  public function checkUser($user)
+  {
+    $sql = "select UserName,Password,Name,IDuser from Users 
+   where UserName = '" . $user['username'] . "'
+   and UserName = '" . $user['password'] . "'";
+    $result = $this->conn->query($sql);
+    if ($result->num_rows > 0) {
+      $row = $result->fetch_assoc();
+      $_SESSION['User'] = $row;
+      return true;
+    }
+    return false;
   }
 }

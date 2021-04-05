@@ -1,8 +1,8 @@
 <div class="container">
     <!-- Smartphone -->
-    <div class="mb-4 card p-2" id="productSmartphone">
+    <div class="mb-4 card p-2" id="#productAccessories">
         <div>
-            <h4>Điện thoại thông minh</h4>
+            <h4>Phụ kiện</h4>
         </div>
         <!-- Section: Show product -->
         <section class="row">

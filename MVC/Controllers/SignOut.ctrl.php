@@ -1,24 +1,17 @@
 <?php
 
-class Home extends Controller
+class SignOut extends Controller
 {
-
     public function Default()
     {
+        session_unset('User');
         $smartphone = $this->Model('Smartphone');
         $accessories = $this->Model('Accessories');
         $this->View("Home", [
             "Page1" => "Smartphone",
             "Page2" => "Accessories",
             "Smartphone" => $smartphone->getAllSmartphone(),
-            "Accessories"=> $accessories->getAllAccessories()
+            "Accessorie" => $accessories->getAllAccessorie()
         ]);
     }
-
-    public function showDetailSmartphone()
-    {
-      
-    }
 }
-
- ?> 

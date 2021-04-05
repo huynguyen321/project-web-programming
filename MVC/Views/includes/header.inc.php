@@ -42,9 +42,9 @@
         <!-- Navbar -->
         <nav class="navbar navbar-expand-md navbar-light scrolling-navbar navbar-transparent">
             <a class="navbar-brand text-center" href="http://huysmartphone.xyz" style="font-weight: bold; font-size: 20px;color: #fff1a1">
-                <i class="fa fa-home" aria-hidden="true"></i> Trang chủ
+                <i class="fa fa-home" aria-hidden="tru"></i> Trang chủ
             </a>
-            <form action="" method="post" class="searchBox navbar-brand">
+            <form action="Search" method="post" class="searchBox navbar-brand">
                 <input class="searchInput" type="text" name="" placeholder="Bạn cần tìm gì?">
                 <button class="searchButton">
                     <i class="fa fa-search" aria-hidden="true"></i>
@@ -56,10 +56,9 @@
                 <i class="fa fa-bars" aria-hidden="true"></i>
             </button>
 
-            <!-- Links -->
+            <!-- Right -->
             <div class="collapse navbar-collapse" id="reponsiveMenu">
 
-                <!-- Right -->
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item text-center">
                         <a href="#!" class="nav-link navbar-link-2 waves-effect">
@@ -98,16 +97,27 @@
                             <i class="fa fa-headphones" aria-hidden="true"></i>
                             Phụ kiện </a>
                     </li>
-                    <li class="nav-item text-center">
-                        <a class="nav-link waves-effect" id="signUp2" data-toggle="modal" data-target="#SignInSignUpModal">
-                            Đăng ký
-                        </a>
-                    </li>
-                    <li class="nav-item pl-2 mb-2 mb-md-0">
-                        <a type="button" class="nav-link btn btn-outline-secondary btn-rounded btn-navbar waves-effect waves-light" id="signIn2"
-                        data-toggle="modal" data-target="#SignInSignUpModal">
-                            ĐĂNG NHẬP</a>
-                    </li>
+                    <?php
+
+                    if (isset($_SESSION['User'])) {
+
+                        echo '
+                        <li class="nav-item text-center">
+                            <a href="User/SignOut" class="nav-link waves-effect" id="signUp2" data-toggle="modal" data-target="#SignInSignUpModal">
+                            <i class="fa fa-user-circle" aria-hidden="true"></i>' . $_SESSION['User'] . ['name'] . '
+                            </a>
+                        </li>';
+                    } else
+                        echo '<li class="nav-item text-center">
+                                <a class="nav-link waves-effect" id="signUp2" data-toggle="modal" data-target="#SignInSignUpModal">
+                                Đăng ký
+                                </a>
+                            </li>
+                            <li class="nav-item pl-2 mb-2 mb-md-0">
+                                <a type="button" class="nav-link btn btn-outline-secondary btn-rounded btn-navbar waves-effect waves-light" id="signIn2" data-toggle="modal" data-target="#SignInSignUpModal">
+                                ĐĂNG NHẬP</a>
+                            </li>';
+                    ?>
                 </ul>
             </div>
 
