@@ -223,7 +223,6 @@ delimiter ;
 
 
 --  User 
-
 create table Users (
 IDuser int unsigned primary key auto_increment,
 `Name` varchar(250) not null,
@@ -239,6 +238,7 @@ create table Orders(
 IDproduct int unsigned not null,
 IDuser int unsigned not null,
 TypeProduct varchar(30),
-foreign key (IDuser) references Users(IDuser),
+foreign key (IDuser) references Users(IDuser) ON DELETE CASCADE ON UPDATE CASCADE,
 `Status` varchar(35) default 'Chờ xử lý'
 );
+

@@ -1,0 +1,52 @@
+<?php
+
+use PHPMailer\PHPMailer\PHPMailer;
+
+class SendEmail
+{
+    public function SendEmail($newUser)
+    {
+        require_once 'MVC/phpmailer/Exception.php';
+        require_once 'MVC/phpmailer/PHPMailer.php';
+        require_once 'MVC/phpmailer/SMTP.php';
+        $mail = new PHPMailer(true);
+
+        try {
+            $mail->isSMTP();
+            $mail->Host = 'smtp.gmail.com';
+            $mail->SMTPAuth = true;
+            $mail->Username = 'tenlahuy4.0@gmail.com'; // Gmail address which you want to use as SMTP server
+            $mail->Password = 'Nagamaru'; // Gmail address Password
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->Port = '587';
+
+            $mail->setFrom('NgaHuySmartphone@gmail.com'); // Gmail address which you used as SMTP server
+            $mail->addAddress($newUser['email']); // Email address where you want to receive emails (you can use any of your gmail address including the gmail address which you used as SMTP server)
+
+            $permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyz';
+            $verification = substr(str_shuffle($permitted_chars), 0, 6);
+
+            $mail->isHTML(true);
+            $mail->Subject = 'Email Vertification Password';
+
+            $mail->Body =
+                "<div>
+                <p><h1>Nga Huy Smartphone</h1></p>
+                <p><h2>Email xác thực Tài Khoản</h2></p>
+                <p>Bạn đã đăng ký tài khoản với các thông tin:</p>
+                <p>-Họ và tên:" . $newUser['name'] . "</p>
+                <p>-Tên đăng nhập:" . $newUser['username'] . "</p>
+                <p>-Email:" . $newUser['email'] . "</p>
+                <p>-Số điện thoại:" . $newUser['phonenumber'] . "</p>
+                <p>-Địa chỉ: " . $newUser['address'] . "</p>
+                <p>Vui lòng nhập mã xác thực bên dưới để hoàn tất đăng ký</p>
+                <p>Mã xác thực: $verification</p>
+                </div>";
+
+            $mail->send();
+            return $verification;
+        } catch (Exception $e) {
+            $alert = '<p>' . $e->getMessage() . '</p>';
+        }
+    }
+}
