@@ -24,8 +24,18 @@
     <link rel="stylesheet" href="http://huysmartphone.xyz/public/assets/mdb5/css/bootstrap.min.css" />
     <link rel="stylesheet" href="http://huysmartphone.xyz/public/assets/mdb5/css/mdb-pro.min.css" />
     <link rel="stylesheet" href="http://huysmartphone.xyz/public/assets/mdb5/css/mdb.ecommerce.min.css" />
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script src="http://huysmartphone.xyz/public/assets/mdb5/js/jquery-3.4.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="http://huysmartphone.xyz/public/assets/mdb5/js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="http://huysmartphone.xyz/public/assets/mdb5/js/bootstrap.js"></script>
+    <!-- MDB core JavaScript -->
     <script type="text/javascript" src="http://huysmartphone.xyz/public/assets/mdb5/js/mdb.min.js"></script>
-    <!-- self -->
+    <!-- MDB Ecommerce JavaScript -->
+    <script type="text/javascript" src="http://huysmartphone.xyz/public/assets/mdb5/js/mdb.ecommerce.min.js"></script>
+    <!-- self custom-->
     <link rel="stylesheet" href="http://huysmartphone.xyz/public/assets/css/style.css">
 
 </head>

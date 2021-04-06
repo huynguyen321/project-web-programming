@@ -34,8 +34,8 @@ class User extends Controller
         if ($verification ==  $_SESSION['verification']) {
             $user = $this->Model('SignUp');
             $user->createNewAcc($newUser);
-            echo "<script>alert('Tạo tài khoản thành công!')
-            window.location.assign('http://huysmartphone.xyz')</script>";
+            echo "<script>alert('Tạo tài khoản thành công!');
+            window.location.assign('http://huysmartphone.xyz');</script>";
             session_unset('verification');
             session_unset('newUser');
         } else {
@@ -52,14 +52,16 @@ class User extends Controller
             'username' => $_POST['userName'],
             'password' => md5($_POST['password'])
         ];
-        $check = $this->Model('SignIn');
-        if ($check->checkUser($user)) {
-            echo `<script>alert('Đăng nhập thành công!)
-            window.location.assign('http://huysmartphone.xyz')</script>`;
-        } else {
-            echo `<script>alert('Đăng nhập thất bại!\nSai tên đăng nhập hoặc mật khẩu!)
-            window.location.assign('http://huysmartphone.xyz')</script>`;
-        }
+
+        $check = $this->Model('SignIn'); 
+       
+        if ($check->checkUser($user) == true) {
+            // echo "<script>alert('Đăng nhập thành công!');
+            // window.location.assign('http://huysmartphone.xyz');</script>";
+            
+        } 
+        echo "<script>alert('Đăng nhập thất bại!\nSai tên đăng nhập hoặc mật khẩu!');
+            window.location.assign('http://huysmartphone.xyz')</script>";
     }
     public function SignOut()
     {
