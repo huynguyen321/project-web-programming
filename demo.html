@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <form class="col-6 card" style="background-color: PaleTurquoise;">
+                    <h3><center>Thông tin giao hàng</center><b></b></h3>
+                <div class="form-group row">
+                    
+                    <label for="inputName" class="col-sm-3 col-form-label">Họ và tên</label>
+                    <div class="col-sm-9">
+                        <input type="text"  class="form-control" id="inputName" placeholder="Họ và tên"><br>
+                    </div>
+                    <label for="inputEmail" class="col-sm-3 col-form-label">Email</label>
+                    <div class="col-sm-9">
+                        <input type="text"  class="form-control"  id="inputEmail" placeholder="email@example.com"><br>
+                    </div>
+
+                    <label for="inputPhoneNumber" class="col-sm-3 col-form-label">Số điện thoại</label>
+                    <div class="col-sm-9">
+                        <input type="tel" class="form-control" id="inputPhoneNumber" placeholder="Số điện thoại"><br>
+                    </div>
+                    <label for="inputAddress" class="col-sm-3 col-form-label">Địa chỉ nhận hàng</label>
+                    <div class="col-sm-9">
+                        <input type="tel" class="form-control" id="inputAddress" placeholder="Địa chỉ nhận hàng">
+                    </div>
+                </div>
+            </form>
+            <form action="" method="post" class="col-6 form-group card" style="border:none">
+                <div class="total">
+                    <p><center><b><h3>Thành tiền</h3></b></center></p>
+                    <h4><center>32.000.000vnđ</center></h4><br>
+                </div>
+                <div class="container">
+                  
+                    <center><button class="btn btn-primary col-6 mb-4">Thanh toán online</button></center>
+                    <center><button class="btn btn-primary col-6">Thanh toán khi nhận hàng</button></center>
+                </div>
+            </form>
+        </div>
+    </div>
+    <style>
+    .bill{
+        width:50%; border:1px solid black; margin:20px auto auto auto; text-align: center;
+        
+    }
+    </style>
+    <table border=1 class="bill" >
+        <tr>
+            <td colspan="3"> <b><center><h3>Chi tiết đơn hàng</h3></center></b></td>
+        </tr>
+        <tr>
+            <th scope="col">STT</th>
+            <th scope="col" >Sản phẩm</th>
+            <th scope="col">Đơn giá</th>
+        </tr>
+        <tr>
+            <td>Tổng tiền</td>
+            <td colspan="2">31.000Đ</td>
+        </tr>
+    </table>
+
+</body>
+
+</html>
