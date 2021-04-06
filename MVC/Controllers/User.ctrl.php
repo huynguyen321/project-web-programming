@@ -64,7 +64,7 @@ class User extends Controller
     public function SignOut()
     {
         $signOut = $this->Model('SignOut');
-        $signOut->
+        $signOut->logOut();
         $smartphone = $this->Model('Smartphone');
         $accessories = $this->Model('Accessories');
         $this->View("Home", [
