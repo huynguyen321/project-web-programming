@@ -18,18 +18,17 @@
                             <input type="tel" class="input-log-in-out" name="phonenumber" pattern="[0]{1}[0-9]{9}" placeholder="Điện thoại" required />
                             <input type="text" class="input-log-in-out" name="address" placeholder="Địa chỉ" required />
                             <input type="password" class="input-log-in-out" name="password" placeholder="Mật khẩu" required />
-                            <button class="btn btn-info btn-rounded" id="add" name="SignUp">Đăng ký</button>
+                            <button type='submit' class="btn btn-info btn-rounded" id="add" name="SignUp">Đăng ký</button>
                         </form>
                     </div>
 
                     <div class="form-container sign-in-container">
                         <form class="form-log-in-out" name="login" action="User/SignIn" method="post">
                             <h2 class="font-weight-bold">Đăng nhập</h2>
-
                             <!-- Sign in -->
-                            <input type="text" name="userName" class="input-log-in-out" name="userName" placeholder="Tên đăng nhập" required />
-                            <input type="password" name="password" class="input-log-in-out" name="password" placeholder="Mật khẩu" required />
-                            <button class="btn btn-info btn-rounded " id="Dangnhap" name="SignIn">Đăng nhập</button>
+                            <input type="text" class="input-log-in-out" name="usernameSignUp" placeholder="Tên đăng nhập" required />
+                            <input type="password" name="pwdSignUp" class="input-log-in-out" placeholder="Mật khẩu" required />
+                            <button type='submit' class="btn btn-info btn-rounded " id="Dangnhap" name="SignIn">Đăng nhập</button>
                         </form>
                     </div>
 

@@ -49,17 +49,18 @@ class User extends Controller
     public function SignIn()
     {
         $user = [
-            'username' => $_POST['userName'],
-            'password' => md5($_POST['password'])
+            'username' => $_POST['usernameSignUp'],
+            'password' => md5($_POST['pwdSignUp'])
         ];
 
-        $check = $this->Model('SignIn'); 
-       
+        $_SESSION['Cart'] = 0;
+
+        $check = $this->Model('SignIn');
+
         if ($check->checkUser($user) == true) {
-            // echo "<script>alert('Đăng nhập thành công!');
-            // window.location.assign('http://huysmartphone.xyz');</script>";
-            
-        } 
+            echo "<script>alert('Đăng nhập thành công!');
+            window.location.assign('http://huysmartphone.xyz');</script>";
+        }
         echo "<script>alert('Đăng nhập thất bại!\nSai tên đăng nhập hoặc mật khẩu!');
             window.location.assign('http://huysmartphone.xyz')</script>";
     }
@@ -67,13 +68,6 @@ class User extends Controller
     {
         $signOut = $this->Model('SignOut');
         $signOut->logOut();
-        $smartphone = $this->Model('Smartphone');
-        $accessories = $this->Model('Accessories');
-        $this->View("Home", [
-            "Page1" => "Smartphone",
-            "Page2" => "Accessories",
-            "Smartphone" => $smartphone->getAllSmartphone(),
-            "Accessorie" => $accessories->getAllAccessories()
-        ]);
+        echo "<script>window.location.assign('http://huysmartphone.xyz')</script>";
     }
 }

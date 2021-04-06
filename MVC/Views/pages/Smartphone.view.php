@@ -7,6 +7,7 @@
             <!-- open while loop -->
             <?php
             while ($row = $data['Smartphone']->fetch_assoc()) {
+                include 'ModalDetailSmartphone.view.php';
             ?>
 
                 <div class="col-md-3 mb-5">
@@ -47,14 +48,14 @@
                                 ?>
                             </p>
                             <div>
-                                <a href="">
-                                    <button class="float-left btn btn-rounded btn-info waves-effect">
-                                        <i class="fa fa-info" aria-hidden="true"></i>
+                                <button class="float-left btn btn-rounded btn-info waves-effect" data-toggle="modal" data-target="#ModalSmartphone<?php echo $row['IDphone'] . $row['Ram'] . $row['Rom']; ?>">
+                                    <i class="fa fa-info" aria-hidden="true"></i>
+                                </button>
+                                <a href="Cart/addToCartSmartphone/<?php echo $row['IDphone'] . '/' . $row['Ram'] . '/' .  $row['Rom'] ?>">
+                                    <button type='submit' class="float-right btn btn-warning waves-effect">
+                                        <i class="fas fa-cart-plus"></i><b>Thêm vào giỏ</b>
                                     </button>
                                 </a>
-                                <button class="float-right btn btn-warning waves-effect">
-                                    <i class="fas fa-cart-plus"></i><b>Thêm vào giỏ</b>
-                                </button>
                             </div>
 
                         </div>
@@ -69,7 +70,7 @@
             <!-- close while loop -->
         </section>
         <!-- Section: Block Content -->
-        <!-- <section>
+        <section>
             <div class="row d-flex justify-content-around align-items-center">
                 <div class="col-3 col-md-3">
                     <h6>Xem tiếp</h6>
@@ -78,17 +79,15 @@
                 <div class="col-12 col-md-4 text-center">
                     <nav aria-label="Page navigation example">
                         <ul class="pagination pagination-circle justify-content-center float-md-right mb-0">
-                            <li class="page-item"><a class="page-link waves-effect waves-effect"><i
-                                        class="fas fa-chevron-left"></i></a></li>
+                            <li class="page-item"><a class="page-link waves-effect waves-effect"><i class="fas fa-chevron-left"></i></a></li>
                             <li class="page-item active"><a class="page-link waves-effect waves-effect">1</a></li>
                             <li class="page-item"><a class="page-link waves-effect waves-effect">2</a></li>
                             <li class="page-item"><a class="page-link waves-effect waves-effect">3</a></li>
-                            <li class="page-item"><a class="page-link waves-effect waves-effect"><i
-                                        class="fas fa-chevron-right"></i></a></li>
+                            <li class="page-item"><a class="page-link waves-effect waves-effect"><i class="fas fa-chevron-right"></i></a></li>
                         </ul>
                     </nav>
                 </div>
             </div>
-        </section> -->
+        </section>
     </div>
 </div>

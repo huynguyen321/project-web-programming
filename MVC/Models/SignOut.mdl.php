@@ -4,6 +4,8 @@ class SignOut
 {
   public function logOut()
   {
-    session_unset('User');
+    unset($_SESSION['User']);
+    unset($_SESSION['ProducInCart']);
+    unset($_SESSION['Cart']);  
   }
 }

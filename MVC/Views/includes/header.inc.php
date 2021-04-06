@@ -71,8 +71,14 @@
 
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item text-center">
-                        <a href="#!" class="nav-link navbar-link-2 waves-effect">
-                            <span class="badge badge-pill red">0</span>
+                        <a href="Home/ShoppingCart" class="nav-link navbar-link-2 waves-effect">
+                            <span class="badge badge-pill red" id="qty">
+                                <?php
+                                if (isset($_SESSION['Cart'])) {
+                                    echo $_SESSION['Cart'];
+                                } else echo 0;
+                                ?>
+                            </span>
                             <i class="fas fa-shopping-cart pl-0"></i>
                         </a>
                     </li>
@@ -111,10 +117,14 @@
 
                     if (isset($_SESSION['User'])) {
 
-                        echo '
+                        echo '<li class="nav-item text-center">
+                            <a class="nav-link waves-effect">
+                            <i class="fa fa-user-circle" aria-hidden="true"></i>' . $_SESSION['User']['Name'] . '
+                            </a>
+                        </li>
                         <li class="nav-item text-center">
-                            <a href="User/SignOut" class="nav-link waves-effect" id="signUp2" data-toggle="modal" data-target="#SignInSignUpModal">
-                            <i class="fa fa-user-circle" aria-hidden="true"></i>' . $_SESSION['User'] . ['name'] . '
+                            <a href="User/SignOut" class="nav-link waves-effect">
+                            <i class="fas fa-sign-out-alt" aria-hidden="true"></i>Đăng xuất
                             </a>
                         </li>';
                     } else
