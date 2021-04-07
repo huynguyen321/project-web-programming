@@ -10017,6 +10017,7 @@ body.scrollable {
 
 .md-form input:not([type]),
 .md-form input[type=date]:not(.browser-default),
+.md-form input[type=radio]:not(.browser-default),
 .md-form input[type=datetime]:not(.browser-default),
 .md-form input[type=datetime-local]:not(.browser-default),
 .md-form input[type=tel]:not(.browser-default),
@@ -10046,6 +10047,7 @@ body.scrollable {
 }
 
 .md-form input:not([type]):focus:not([readonly]),
+.md-form input[type=radio]:not(.browser-default):focus:not([readonly]),
 .md-form input[type=date]:not(.browser-default):focus:not([readonly]),
 .md-form input[type=datetime]:not(.browser-default):focus:not([readonly]),
 .md-form input[type=datetime-local]:not(.browser-default):focus:not([readonly]),

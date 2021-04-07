@@ -20,4 +20,20 @@ class Smartphone extends Connect
          and Ram = '$smartphone[1]' and Rom = '$smartphone[2]';";
         return $this->conn->query($sql);
     }
+    public function addSmarphone($newSmartphone){
+        $sql = "insert into Smartphone(PhoneName,IDbrand,Image,IDram,IDrom,IDos,Price,Discount,Vote) 
+        values
+        ('".$newSmartphone['namePhone']."',
+        ".$newSmartphone['brandPhone'].",
+        '".$newSmartphone['imgPhone']."',
+        ".$newSmartphone['ramPhone'].",
+        ".$newSmartphone['romPhone'].",
+        ".$newSmartphone['osPhone'].",
+        ".$newSmartphone['pricePhone'].",
+        ".$newSmartphone['discountPhone'].",
+        ".$newSmartphone['votePhone'].")";
+        $this->conn->query($sql);
+        $sql = "call updateIDsmartphone;";
+        $this->conn->query($sql);
+    }
 }

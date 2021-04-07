@@ -66,39 +66,27 @@ IDphone int unsigned auto_increment primary key,
 PhoneName varchar (35) not null,
 IDbrand int unsigned not null,
 Image varchar(1500) not null,
-Vote float not null default 5,
-foreign key (IDbrand) references Brand(IDbrand),
-fulltext key PhoneName(PhoneName)
-);
-
-insert into Smartphone(PhoneName,IDbrand,Image,Vote) 
-values
-("iPhone 12 Pro Max",1, 'http://huysmartphone.xyz/public/assets/img/product/smartphone/iphone-12-pro-max-xanh-duong-new-600x600-600x600.jpg',5),
-("Vsmart Star 5",7,'http://huysmartphone.xyz/public/assets/img/product/smartphone/vsmart-star-5-thumb-green-600x600-1-600x600.jpg',4.5),
-("Vivo Y51 2020",8, 'http://huysmartphone.xyz/public/assets/img/product/smartphone/vivo-y51-bac-600x600-600x600.jpg',3);
-
---  detail configuration
-create table configuration(
-IDphone int unsigned not null,
 IDram int unsigned not null,
 IDrom int unsigned not null,
 IDos int unsigned not null,
 Price dec(10,0) not null,
 Discount dec(10,0) default 0,
-foreign key (IDphone) references smartphone(IDphone) ON DELETE CASCADE ON UPDATE CASCADE,
+Vote float not null default 5,
+foreign key (IDbrand) references Brand(IDbrand),
 foreign key (IDram) references RAM(IDram) ON DELETE CASCADE ON UPDATE CASCADE,
 foreign key (IDrom) references ROM(IDrom) ON DELETE CASCADE ON UPDATE CASCADE,
-foreign key (IDos) references OS(IDos) ON DELETE CASCADE ON UPDATE CASCADE
+foreign key (IDos) references OS(IDos) ON DELETE CASCADE ON UPDATE CASCADE,
+fulltext key PhoneName(PhoneName)
 );
 
-insert into configuration(IDphone,IDram,IDrom,IDos,Price,Discount) 
+insert into Smartphone(PhoneName,IDbrand,Image,IDram,IDrom,IDos,Price,Discount,Vote) 
 values
-(1,4,4,1,33900000,31690000),
-(1,4,5,1,35900000,32690000),
-(1,4,6,1,36890000,33290000),
-(2,2,3,2,2890000,0),
-(2,2,4,2,3290000,0),
-(3,5,5,2,5590000,6290000);
+("iPhone 12 Pro Max",1, 'http://huysmartphone.xyz/public/assets/img/product/smartphone/iphone-12-pro-max-xanh-duong-new-600x600-600x600.jpg',4,4,1,33900000,31690000,5),
+("iPhone 12 Pro Max",1, 'http://huysmartphone.xyz/public/assets/img/product/smartphone/iphone-12-pro-max-xanh-duong-new-600x600-600x600.jpg',4,5,1,35900000,32690000,5),
+("iPhone 12 Pro Max",1, 'http://huysmartphone.xyz/public/assets/img/product/smartphone/iphone-12-pro-max-xanh-duong-new-600x600-600x600.jpg',4,6,1,36890000,33290000,5),
+("Vsmart Star 5",7,'http://huysmartphone.xyz/public/assets/img/product/smartphone/vsmart-star-5-thumb-green-600x600-1-600x600.jpg',2,3,2,2890000,0,4.5),
+("Vsmart Star 5",7,'http://huysmartphone.xyz/public/assets/img/product/smartphone/vsmart-star-5-thumb-green-600x600-1-600x600.jpg',2,4,2,3290000,0,4.5),
+("Vivo Y51 2020",8, 'http://huysmartphone.xyz/public/assets/img/product/smartphone/vivo-y51-bac-600x600-600x600.jpg',5,5,2,5590000,6290000,3);
 
 -- procedure auto update id
 
@@ -147,11 +135,12 @@ begin
 	drop view if exists viewSmartphone;
 	create algorithm = merge
 	view viewSmartphone (IDphone, PhoneName, Brand ,Ram, Rom, OS, Price, Discount, Image, Vote) as
-		select s.IDphone , s.PhoneName, b.Brand, RAM.RAM, ROM.ROM, OS.OS, c.Price, c.Discount, s.Image, s.Vote 
-		from Smartphone s, Brand b, ROM, RAM, OS, configuration c
-		where (s.IDphone = c.IDphone and s.IDbrand = b.IDbrand 
-			and RAM.IDram = c.IDram and ROM.IDrom = c.IDrom
-			and OS.IDos = c.IDos)
+		select s.IDphone , s.PhoneName, b.Brand, RAM.RAM, ROM.ROM, OS.OS, s.Price, s.Discount, s.Image, s.Vote 
+		from Smartphone s, Brand b, ROM, RAM, OS
+		where (s.IDbrand = b.IDbrand 
+			and RAM.IDram = s.IDram
+            and ROM.IDrom = s.IDrom
+			and OS.IDos = s.IDos)
             order by s.IDphone asc;
 end //
 delimiter ;
@@ -159,24 +148,28 @@ delimiter ;
 call updateViewSmartphone;
 -- select * from viewSmartphone;
 
-use fulltext search smartphone
+-- use fulltext search smartphone
 delimiter //
 drop procedure if exists searchSmartphone //
 create procedure searchSmartphone(in namePhone varchar(250))
 begin
+
+if lower(namePhone) = 'apple' then set namePhone = 'iPhone';
+ end if;
 set namePhone = concat(namePhone,"*");
-	select s.IDphone , s.PhoneName, b.Brand, RAM.RAM, ROM.ROM, OS.OS, c.Price, c.Discount, s.Image, s.Vote 
-		from Smartphone s, Brand b, ROM, RAM, OS, configuration c
+	select s.IDphone , s.PhoneName, b.Brand, RAM.RAM, ROM.ROM, OS.OS, s.Price, s.Discount, s.Image, s.Vote 
+		from Smartphone s, Brand b, ROM, RAM, OS
 		where 
         MATCH(PhoneName) AGAINST(namePhone IN BOOLEAN MODE)
-			and s.IDphone = c.IDphone and s.IDbrand = b.IDbrand 
-			and RAM.IDram = c.IDram and ROM.IDrom = c.IDrom
-			and OS.IDos = c.IDos
+			and s.IDbrand = b.IDbrand 
+			and RAM.IDram = s.IDram
+            and ROM.IDrom = s.IDrom
+			and OS.IDos = s.IDos
             order by s.IDphone asc;
 end //
 delimiter ;
 
--- call searchSmartphone('v');	
+-- call searchSmartphone('apple');	
 
 --  accessories
 create table accessories(
@@ -222,39 +215,6 @@ end //
 delimiter ;
 
 -- call searchAccessories("pw");
-
--- noi loai ram (cont)
-delimiter //
-drop function if exists merger_ram //
-create function merger_ram(id int)
-returns varchar(300)
-deterministic
-begin
-declare ram varchar(50) default '';
-declare id_ram int;
-declare ram_temp varchar(10) default '';
-declare id_ram_temp int;
-declare finished int default 0;
-declare curRam cursor for 
-	select IDram,RAM from ram;
-declare continue handler for not found set finished = 1;
-open curRam;
-concatRam: loop
-	fetch curRam into id_ram,ram_temp;
-    if finished = 1 then
-		leave concatRam;
-	end if;
-    if id_ram_temp = id_ram then
-	if kt = 0 then
-		set the_loai = concat(the_loai,(select ten_theLoai from theLoai where id_theloai = id_theLoai_temp));
-        set kt = 1;
-	end if;
-    end if;        
-end loop concatRam;
-close curRam;
-return ram;
-end //
-delimiter ;
 
 --  User 
 use ourwebsite;
@@ -303,3 +263,5 @@ end //
 delimiter ;
 
 call updateIDslider();
+
+select * from rom;

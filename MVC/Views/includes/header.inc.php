@@ -87,8 +87,8 @@
                             <i class="fa fa-mobile-alt" aria-hidden="true"></i>
                             Điện thoại
                         </a>
-                        <a class="dropbtn waves-effect" role="button" id="dropdownMenu" data-toggle="dropdown"aria-haspopup="true" aria-expanded="false">
-                        <i class="fa fa-caret-down" aria-hidden="true"></i>
+                        <a class="dropbtn waves-effect" role="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-caret-down" aria-hidden="true"></i>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu">
                             <table>

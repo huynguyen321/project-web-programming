@@ -25,8 +25,8 @@
                 if ($blockStatus == 0) {
                     $iconLock = '<i class="fas fa-lock-open" color="blue"></i>';
                 } else $iconLock = '<i class="fas fa-lock" color="red"></i>';
-                echo $table = "
-                <thead class='thead-light'>
+                echo "
+                <tbody>
                 <tr>
                 <td>$IDuser</td>
                 <td>$Name</td>
@@ -40,7 +40,7 @@
                 </a>
                 </td>
                 </tr>
-                </thead>
+                </tbody>
                 ";
             }
             ?>
