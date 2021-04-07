@@ -87,9 +87,10 @@
                             <i class="fa fa-mobile-alt" aria-hidden="true"></i>
                             Điện thoại
                         </a>
-                        <a class="nav-link dropdown-toggle waves-effect" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="padding:0; margin:10px 10px 15px 0;">
+                        <a class="dropbtn waves-effect" role="button" id="dropdownMenu" data-toggle="dropdown"aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-caret-down" aria-hidden="true"></i>
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu">
                             <table>
                                 <tr>
                                     <td><a class="dropdown-item" href="#"><img src="http://huysmartphone.xyz/public/assets/img/logo-brand/iPhone.jpg" alt="product" width="108px"></a></td>

@@ -6,7 +6,7 @@ class Admin extends Controller
     {
         $smartphone = $this->Model('Smartphone');
         $accessories = $this->Model('Accessories');
-        $user= $this->Model('User');
+        $user= $this->Model('Users');
         $this->View("Admin", [
             "Page1"=>"SliderAdmin",
             "Page2"=>"SmartphoneAdmin",

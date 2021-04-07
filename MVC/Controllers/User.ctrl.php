@@ -56,7 +56,7 @@ class User extends Controller
 
         $check = $this->Model('Users');
 
-        if ($check->checkUser($user) == true) {
+        if ($check->checkUser($user)) {
             echo "<script>alert('Đăng nhập thành công!');
             window.location.assign('http://huysmartphone.xyz');</script>";
         }
@@ -68,5 +68,14 @@ class User extends Controller
         $signOut = $this->Model('Users');
         $signOut->logOut();
         echo "<script>window.location.assign('http://huysmartphone.xyz')</script>";
+    }
+    public function blockUser(){
+        $user = func_get_args();
+        $signOut = $this->Model('Users');
+        $signOut->block($user[0],$user[1]);
+        if($user[1]==0){
+            echo "<script>alert('Block người dùng có IDuser = $user[0] thành công')</script>";
+        }else echo "<script>alert('Mở Block người dùng có IDuser = $user[0] thành công')</script>";
+        echo "<script>window.location.assign('http://huysmartphone.xyz/admin/')</script>";
     }
 }

@@ -37,10 +37,13 @@ class Users extends Connect
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 $_SESSION['User'] = $row;
+                echo "OK";
                 return true;
             }
+        } else {
+            echo "<script>alert('Đăng nhập thất bại!\nSai tên đăng nhập hoặc mật khẩu!');</script>";
+            return false;
         }
-        return false;
     }
     // Sign Out
     public function logOut()
@@ -48,5 +51,19 @@ class Users extends Connect
         unset($_SESSION['User']);
         unset($_SESSION['ProducInCart']);
         unset($_SESSION['Cart']);
+    }
+    public function block($IDuser, $blockStatus)
+    {
+        if ($blockStatus == 0) {
+            $sql = 'UPDATE Users
+            SET Blocked= 1
+            WHERE IDuser = ' . $IDuser . ';';
+        } else {
+            $sql = 'UPDATE Users
+            SET Blocked= 0
+            WHERE IDuser = ' . $IDuser . ';';
+        }
+        $result = $this->conn->query($sql);
+        return $result;
     }
 }

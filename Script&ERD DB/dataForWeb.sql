@@ -159,7 +159,7 @@ delimiter ;
 call updateViewSmartphone;
 -- select * from viewSmartphone;
 
--- use fulltext search smartphone
+use fulltext search smartphone
 delimiter //
 drop procedure if exists searchSmartphone //
 create procedure searchSmartphone(in namePhone varchar(250))
@@ -223,6 +223,38 @@ delimiter ;
 
 -- call searchAccessories("pw");
 
+-- noi loai ram (cont)
+delimiter //
+drop function if exists merger_ram //
+create function merger_ram(id int)
+returns varchar(300)
+deterministic
+begin
+declare ram varchar(50) default '';
+declare id_ram int;
+declare ram_temp varchar(10) default '';
+declare id_ram_temp int;
+declare finished int default 0;
+declare curRam cursor for 
+	select IDram,RAM from ram;
+declare continue handler for not found set finished = 1;
+open curRam;
+concatRam: loop
+	fetch curRam into id_ram,ram_temp;
+    if finished = 1 then
+		leave concatRam;
+	end if;
+    if id_ram_temp = id_ram then
+	if kt = 0 then
+		set the_loai = concat(the_loai,(select ten_theLoai from theLoai where id_theloai = id_theLoai_temp));
+        set kt = 1;
+	end if;
+    end if;        
+end loop concatRam;
+close curRam;
+return ram;
+end //
+delimiter ;
 
 --  User 
 use ourwebsite;
@@ -237,6 +269,10 @@ IDuser int unsigned primary key auto_increment,
 `Blocked` bit default 0
 );
 
+UPDATE Users
+SET `Blocked`=0
+WHERE IDuser=1;
+
 create table Orders(
 IDproduct int unsigned not null,
 IDuser int unsigned not null,
@@ -245,4 +281,25 @@ foreign key (IDuser) references Users(IDuser) ON DELETE CASCADE ON UPDATE CASCAD
 `Status` varchar(35) default 'Chờ xử lý'
 );
 
+create table Sliders(
+IDslider int unsigned not null primary key auto_increment,
+Slider varchar(1000) not null
+);
 
+insert into Sliders(Slider) values
+('http://huysmartphone.xyz/public/assets/img/carousel/carousel1.jpg'),
+('http://huysmartphone.xyz/public/assets/img/carousel/carousel2.jpg'),
+('http://huysmartphone.xyz/public/assets/img/carousel/carousel3.jpg'),
+('http://huysmartphone.xyz/public/assets/img/carousel/carousel4.jpg'),
+('http://huysmartphone.xyz/public/assets/img/carousel/carousel5.jpg');
+
+delimiter //
+drop procedure if exists updateIDslider //
+create procedure updateIDslider()
+begin
+ALTER TABLE Sliders DROP IDslider;
+ALTER TABLE Sliders ADD IDslider INT unsigned NOT NULL AUTO_INCREMENT FIRST, ADD PRIMARY KEY (IDslider), AUTO_INCREMENT=1;
+end //
+delimiter ;
+
+call updateIDslider();

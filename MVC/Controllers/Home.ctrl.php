@@ -14,6 +14,13 @@ class Home extends Controller
             "Accessories"=> $accessories->getAllAccessories()
         ]);
     }
+    public function SendMail()
+    {
+        $email = $_POST['emailReceiveInfor'];
+        $sendEmail = $this->Model('SendEmail');
+        $sendEmail->SendEmailReceiveInfor($email);
+        echo "<script>window.location ='http://huysmartphone.xyz'</script>";
+    }
 }
 
  ?> 
