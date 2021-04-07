@@ -8,8 +8,11 @@ class Admin extends Controller
         $accessories = $this->Model('Accessories');
         $user= $this->Model('User');
         $this->View("Admin", [
-            "Page" => "Smartphone",
-            "Users"=>
+            "Page1"=>"SliderAdmin",
+            "Page2"=>"SmartphoneAdmin",
+            "Page3"=>"AccessoriesAdmin",
+            "Page4" => "UserAdmin",
+            "Users"=>$user->getAllUser(),
             "Smartphone" => $smartphone->getAllSmartphone(),
             "Accessories"=> $accessories->getAllAccessories()
         ]);

@@ -17,15 +17,17 @@ class Cart extends Controller
 
     public function addToCartSmartphone()
     {
-        $smartphone = func_get_args();
-        if(isset($_POST['quantity'])){
-            $_SESSION['Cart'] = intval($_POST['quantity']) + intval($_SESSION['Cart']);
-        }else{
-            $_SESSION['Cart'] = intval(1 + intval($_SESSION['Cart']));
+        if(isset($_SESSION['User'])){
+            $smartphone = func_get_args();
+            if(isset($_POST['quantity'])){
+                $_SESSION['Cart'] = intval($_POST['quantity']) + intval($_SESSION['Cart']);
+            }else{
+                $_SESSION['Cart'] = intval(1 + intval($_SESSION['Cart']));
+            }
+            $addCart = $this->Model('Smartphone');
         }
-        
+        else echo "<script>alert('Bạn phải đăng nhập để dùng chức năng này')</script>";
         //print_r($smartphone);
-        $addCart = $this->Model('Smartphone');
         echo "<script>window.location.assign('http://huysmartphone.xyz')</script>";
         //$_SESSION['ProducInCart'][] = ($addCart->getOneSmartphone($smartphone))->fetch_assoc();
         // print_r($_SESSION['ProducInCart']);

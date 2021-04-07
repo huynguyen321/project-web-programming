@@ -3,7 +3,6 @@ class User extends Controller
 {
     public function SignUp()
     {
-
         $newUser = [
             'name' => $_POST['name'],
             'username' => $_POST['username'],
@@ -12,9 +11,9 @@ class User extends Controller
             'address' => $_POST['address'],
             'password' => md5($_POST['password'])
         ];
-        $user = $this->Model('SignUp');
 
-        echo $user->checkUserName($newUser);
+        $user = $this->Model('Users');
+
         if ($user->checkUserName($newUser)) {
             echo "<script>alert('Tên đăng nhập đã tồn tại!')
             window.location.assign('http://huysmartphone.xyz')</script>";
@@ -32,7 +31,7 @@ class User extends Controller
         $verification = $_POST['verification'];
         $newUser = $_SESSION['newUser'];
         if ($verification ==  $_SESSION['verification']) {
-            $user = $this->Model('SignUp');
+            $user = $this->Model('Users');
             $user->createNewAcc($newUser);
             echo "<script>alert('Tạo tài khoản thành công!');
             window.location.assign('http://huysmartphone.xyz');</script>";
@@ -55,7 +54,7 @@ class User extends Controller
 
         $_SESSION['Cart'] = 0;
 
-        $check = $this->Model('SignIn');
+        $check = $this->Model('Users');
 
         if ($check->checkUser($user) == true) {
             echo "<script>alert('Đăng nhập thành công!');
@@ -66,7 +65,7 @@ class User extends Controller
     }
     public function SignOut()
     {
-        $signOut = $this->Model('SignOut');
+        $signOut = $this->Model('Users');
         $signOut->logOut();
         echo "<script>window.location.assign('http://huysmartphone.xyz')</script>";
     }
