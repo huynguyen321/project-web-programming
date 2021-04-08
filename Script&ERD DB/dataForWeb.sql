@@ -263,5 +263,4 @@ end //
 delimiter ;
 
 call updateIDslider();
-
-select * from rom;
+select * from accessories;
