@@ -48,19 +48,16 @@
                                 ?>
                             </p>
                             <div>
-                                <button class="float-left btn btn-rounded btn-info waves-effect" data-toggle="modal" data-target="#ModalSmartphone<?php echo $row['IDphone'] . $row['Ram'] . $row['Rom']; ?>">
+                                <button class="float-left btn btn-rounded btn-info waves-effect" 
+                                data-toggle="modal" data-target="#ModalSmartphone<?php echo $row['IDphone'] . $row['Ram'] . $row['Rom']; ?>">
                                     <i class="fa fa-info" aria-hidden="true"></i>
                                 </button>
-                                <a href="Cart/addToCartSmartphone/<?php echo $row['IDphone'] . '/' . $row['Ram'] . '/' .  $row['Rom'] ?>">
+                                <a href="Cart/addToCartSmartphone/<?php echo $row['IDphone']?>">
                                     <button type='submit' class="float-right btn btn-warning waves-effect">
                                         <i class="fas fa-cart-plus"></i><b>Thêm vào giỏ</b>
                                     </button>
                                 </a>
                             </div>
-
-                        </div>
-
-                        <div>
 
                         </div>
                     </div>

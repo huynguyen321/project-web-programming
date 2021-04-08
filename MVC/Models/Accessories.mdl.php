@@ -15,13 +15,13 @@ class Accessories extends Connect
 
     public function addAccessoriesDB($newAccessories)
     {
-        $sql = "insert into Accessories(AccessoriesName,Image,Price,Discount) 
+        $sql = "INSERT into accessories(AccessoriesName,Price,Discount,`Image`,`Description`) 
         values
         ('" . $newAccessories['nameAccessories'] . "',
-        " . $newAccessories['brandAccessories'] . ",
-        '" . $newAccessories['imgAccessories'] . "',
         " . $newAccessories['priceAccessories'] . ",
-        " . $newAccessories['discountAccessories'] . ")";
+        " . $newAccessories['discountAccessories'] . ",
+        '" . $newAccessories['imgAccessories'] . "',
+        '" . $newAccessories['descriptionAccessories'] . "');";
         $this->conn->query($sql);
         $sql = "call updateIDaccessories;";
         $this->conn->query($sql);
@@ -30,23 +30,21 @@ class Accessories extends Connect
     public function updateAccessoriesDB($accessories)
     {
         if ($accessories['imgAccessories'] != "old") {
-            $sql = "UPDATE Accessories set 
+            $sql = "UPDATE accessories set 
             AccessoriesName = '" . $accessories['nameAccessories'] . "',
-            IDbrand = " . $accessories['brandAccessories'] . ",
-            `Image`= '" . $accessories['imgAccessories'] . "',
             Price = " . $accessories['priceAccessories'] . ",
             Discount = " . $accessories['discountAccessories'] . ",
+            `Image`= '" . $accessories['imgAccessories'] . "',
+            `Description` = '" . $accessories['descriptionAccessories'] . "',
             where IDaccessories = " . $accessories['IDaccessories'] . ";";
         } else {
             $sql = "UPDATE Accessories set 
             AccessoriesName = '" . $accessories['nameAccessories'] . "',
             Price = " . $accessories['priceAccessories'] . ",
             Discount = " . $accessories['discountAccessories'] . ",
+            `Description` = '" . $accessories['descriptionAccessories'] . "'
             where IDaccessories = " . $accessories['IDaccessories'] . ";";
         }
-
-        $this->conn->query($sql);
-        $sql = "call updateIDaccessories;";
         $this->conn->query($sql);
     }
 

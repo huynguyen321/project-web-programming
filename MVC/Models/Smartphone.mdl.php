@@ -16,8 +16,7 @@ class Smartphone extends Connect
     public function getOneSmartphone($smartphone)
     {
         $sql = "SELECT * from viewSmartphone
-         where IDphone = '$smartphone[0]'
-         and Ram = '$smartphone[1]' and Rom = '$smartphone[2]';";
+         where IDphone = $smartphone[0];";
         return $this->conn->query($sql);
     }
     public function addSmartphoneDB($newSmartphone)

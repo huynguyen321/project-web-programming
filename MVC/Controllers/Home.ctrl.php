@@ -21,6 +21,7 @@ class Home extends Controller
         $sendEmail->SendEmailReceiveInfor($email);
         echo "<script>window.location ='http://huysmartphone.xyz'</script>";
     }
+
 }
 
  ?> 

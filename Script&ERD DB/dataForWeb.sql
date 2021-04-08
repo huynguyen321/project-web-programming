@@ -216,6 +216,20 @@ delimiter ;
 
 -- call searchAccessories("pw");
 
+
+delimiter //
+drop procedure if exists updateIDaccessories //
+create procedure updateIDaccessories()
+begin
+ALTER TABLE accessories DROP IDaccessories;
+ALTER TABLE accessories ADD IDaccessories INT unsigned NOT NULL AUTO_INCREMENT FIRST, ADD PRIMARY KEY (IDaccessories), AUTO_INCREMENT=1;
+end //
+delimiter ;
+
+call updateIDaccessories();
+
+
+
 --  User 
 use ourwebsite;
 create table Users (
@@ -229,10 +243,6 @@ IDuser int unsigned primary key auto_increment,
 `Blocked` bit default 0
 );
 
-UPDATE Users
-SET `Blocked`=0
-WHERE IDuser=1;
-
 create table Orders(
 IDproduct int unsigned not null,
 IDuser int unsigned not null,
@@ -241,26 +251,26 @@ foreign key (IDuser) references Users(IDuser) ON DELETE CASCADE ON UPDATE CASCAD
 `Status` varchar(35) default 'Chờ xử lý'
 );
 
-create table Sliders(
-IDslider int unsigned not null primary key auto_increment,
-Slider varchar(1000) not null
-);
+-- create table Sliders(
+-- IDslider int unsigned not null primary key auto_increment,
+-- Slider varchar(1000) not null
+-- );
 
-insert into Sliders(Slider) values
-('http://huysmartphone.xyz/public/assets/img/carousel/carousel1.jpg'),
-('http://huysmartphone.xyz/public/assets/img/carousel/carousel2.jpg'),
-('http://huysmartphone.xyz/public/assets/img/carousel/carousel3.jpg'),
-('http://huysmartphone.xyz/public/assets/img/carousel/carousel4.jpg'),
-('http://huysmartphone.xyz/public/assets/img/carousel/carousel5.jpg');
+-- insert into Sliders(Slider) values
+-- ('http://huysmartphone.xyz/public/assets/img/carousel/carousel1.jpg'),
+-- ('http://huysmartphone.xyz/public/assets/img/carousel/carousel2.jpg'),
+-- ('http://huysmartphone.xyz/public/assets/img/carousel/carousel3.jpg'),
+-- ('http://huysmartphone.xyz/public/assets/img/carousel/carousel4.jpg'),
+-- ('http://huysmartphone.xyz/public/assets/img/carousel/carousel5.jpg');
 
-delimiter //
-drop procedure if exists updateIDslider //
-create procedure updateIDslider()
-begin
-ALTER TABLE Sliders DROP IDslider;
-ALTER TABLE Sliders ADD IDslider INT unsigned NOT NULL AUTO_INCREMENT FIRST, ADD PRIMARY KEY (IDslider), AUTO_INCREMENT=1;
-end //
-delimiter ;
+-- delimiter //
+-- drop procedure if exists updateIDslider //
+-- create procedure updateIDslider()
+-- begin
+-- ALTER TABLE Sliders DROP IDslider;
+-- ALTER TABLE Sliders ADD IDslider INT unsigned NOT NULL AUTO_INCREMENT FIRST, ADD PRIMARY KEY (IDslider), AUTO_INCREMENT=1;
+-- end //
+-- delimiter ;
 
-call updateIDslider();
+-- call updateIDslider();
 select * from accessories;

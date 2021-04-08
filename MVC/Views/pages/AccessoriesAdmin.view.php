@@ -5,11 +5,12 @@
     <table class="table">
         <thead class="thead-light">
             <tr>
-                <th>ID accessories</th>
-                <th>Tên Accessories</th>
+                <th>ID Phụ kiện</th>
+                <th>Tên Phụ kiện</th>
                 <th>Ảnh</th>
                 <th>Giá</th>
                 <th>Giảm giá</th>
+                <th>Mô tả</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -24,9 +25,10 @@
                     <td><img src='" . $row['Image'] . "' style='width: 50px;'></td>
                     <td>" . $row['Price'] . "</td>
                     <td>" . $row['Discount'] . "</td>
+                    <td>" . $row['Description'] . "</td>
                     <td>
                         <button type='button' onclick='update(" . $row['IDaccessories'] . ")' class='btn btn-outline-danger' data-toggle='modal' data-target='#updateAccessories'><i class='fas fa-cogs'> </i></button>
-                       <a href='http://huyaccessories.xyz/Admin/deleteAccessories/" . $row['IDaccessories'] . "'><button type='button' name='deleteAccessories' class='btn btn-out-warning'> <i class='fas fa-trash'> </i></button></a>
+                       <a href='http://huysmartphone.xyz/Admin/deleteAccessories/" . $row['IDaccessories'] . "'><button type='button' name='deleteAccessories' class='btn btn-out-warning'> <i class='fas fa-trash'> </i></button></a>
                     </td>
                     </tr>";
             }
@@ -46,7 +48,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="http://huyaccessories.xyz/admin/addAccessories" method="post" enctype="multipart/form-data" class="form-row">
+                    <form action="http://huysmartphone.xyz/admin/addAccessories" method="post" enctype="multipart/form-data" class="form-row">
                         <div class="col-12 mt-3">
                             <input type="text" class="form-control" name="nameAccessories" placeholder="Tên sản phẩm" required>
                         </div>
@@ -59,6 +61,9 @@
                         </div>
                         <div class="col-12 mt-3">
                             <input type="number" min="0" class="form-control" name="discountAccessories" placeholder="Giảm Giá" required>
+                        </div>
+                        <div class="col-12 mt-3">
+                            <textarea cols="10" rows="5" class="form-control" name="descriptionAccessories" placeholder="Mô tả" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-outline-danger mt-3" name="addAccessories">Thêm</button>
                     </form>
@@ -78,6 +83,7 @@
             $("#imgUpAccessories").attr("src", tempAccessories[key]['Image']);
             $("#priceUpAccessories").val(tempAccessories[key]['Price']);
             $("#discountUpAccessories").val(tempAccessories[key]['Discount']);
+            $("#descriptionUpAccessories").val(tempAccessories[key]['Description']);
         }
     </script>
     <!-- Modal updateAccessories-->
@@ -91,7 +97,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="http://huyaccessories.xyz/admin/updateAccessories" method="post" class="form-row">
+                    <form action="http://huysmartphone.xyz/admin/updateAccessories" method="post" class="form-row">
                         <div class="col-12 mt-3">
                             <input type="number" class="form-control" id="idUpAccessories" name="idUpAccessories" readonly>
                         </div>
@@ -111,6 +117,9 @@
                         </div>
                         <div class="col-12 mt-3">
                             <input type="number" min="0" class="form-control" id="discountUpAccessories" name="discountUpAccessories" placeholder="Giảm Giá" required>
+                        </div>
+                        <div class="col-12 mt-3">
+                            <textarea id="descriptionUpAccessories" cols="10" rows="5" class="form-control" name="descriptionUpAccessories" placeholder="Mô tả" required></textarea>
                         </div>
                         <button type="submit" class="mt-3 btn btn-danger" name="updateAccessories">
                             Cập nhật

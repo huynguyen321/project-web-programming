@@ -71,7 +71,7 @@
 
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item text-center">
-                        <a href="Home/ShoppingCart" class="nav-link navbar-link-2 waves-effect">
+                        <a href="Cart/ShoppingCart" class="nav-link navbar-link-2 waves-effect">
                             <span class="badge badge-pill red" id="qty">
                                 <?php
                                 if (isset($_SESSION['Cart'])) {

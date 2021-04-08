@@ -32,8 +32,7 @@ class Admin extends Controller
                 // Upload file
                 move_uploaded_file($_FILES['imgPhone']['tmp_name'], 'public/assets/img/product/smartphone/' . $_FILES['imgPhone']['name']);
                 $linkImage = "http://huysmartphone.xyz/public/assets/img/product/smartphone/" . $_FILES['imgPhone']['name'];
-                echo "<script>alert('Upload thành công');
-                window.location.assign('http://huysmartphone.xyz/admin/')</script>";
+                echo "<script>alert('Upload thành công');</script>";
             }
         } else {
             echo "<script>alert('Bạn chưa chọn file upload');
@@ -72,8 +71,7 @@ class Admin extends Controller
                 // Upload file
                 move_uploaded_file($_FILES['imgUpPhone']['tmp_name'], 'public/assets/img/product/smartphone/' . $_FILES['imgUpPhone']['name']);
                 $linkImage = "http://huysmartphone.xyz/public/assets/img/product/smartphone/" . $_FILES['imgUpPhone']['name'];
-                echo "<script>alert('Upload thành công');
-                window.location.assign('http://huysmartphone.xyz/admin/')</script>";
+                echo "<script>alert('Upload thành công');</script>";
             }
         } else {
             $linkImage = "old";
@@ -105,6 +103,9 @@ class Admin extends Controller
        window.location.assign('http://huysmartphone.xyz/admin/')</script>";
     }
 
+
+
+
     // accessories
     public function addAccessories()
     {
@@ -120,8 +121,7 @@ class Admin extends Controller
                 // Upload file
                 move_uploaded_file($_FILES['imgAccessories']['tmp_name'], 'public/assets/img/product/accessories/' . $_FILES['imgAccessories']['name']);
                 $linkImage = "http://huysmartphone.xyz/public/assets/img/product/accessories/" . $_FILES['imgAccessories']['name'];
-                echo "<script>alert('Upload thành công');
-                window.location.assign('http://huysmartphone.xyz/admin/')</script>";
+                echo "<script>alert('Upload thành công');</script>";
             }
         } else {
             echo "<script>alert('Bạn chưa chọn file upload');
@@ -132,7 +132,8 @@ class Admin extends Controller
             'nameAccessories' => $_POST['nameAccessories'],
             'imgAccessories' => $linkImage,
             'priceAccessories' => $_POST['priceAccessories'],
-            'discountAccessories' => $_POST['discountAccessories']
+            'discountAccessories' => $_POST['discountAccessories'],
+            'descriptionAccessories' => $_POST['descriptionAccessories']
         ];
 
         $accessories = $this->Model('Accessories');
@@ -141,13 +142,11 @@ class Admin extends Controller
         window.location.assign('http://huysmartphone.xyz/admin/')</script>";
     }
 
-    public function updatAccessories()
+    public function updateAccessories()
     {
         $linkImage = '';
         // Nếu người dùng có chọn file để upload
         if (isset($_FILES['imgUpAccessories'])) {
-            // Nếu file upload không bị lỗi,
-            // Tức là thuộc tính error > 0
             if ($_FILES['imgUpAccessories']['error'] > 0) {
                 echo "<script>alert('File Upload bị Lỗi');
                 window.location.assign('http://huysmartphone.xyz/admin/')</script>";
@@ -155,8 +154,7 @@ class Admin extends Controller
                 // Upload file
                 move_uploaded_file($_FILES['imgUpAccessories']['tmp_name'], 'public/assets/img/product/accessories/' . $_FILES['imgUpAccessories']['name']);
                 $linkImage = "http://huysmartphone.xyz/public/assets/img/product/smartphone/" . $_FILES['imgUpAccessories']['name'];
-                echo "<script>alert('Upload thành công');
-                window.location.assign('http://huysmartphone.xyz/admin/')</script>";
+                echo "<script>alert('Upload thành công');</script>";
             }
         } else {
             $linkImage = "old";
@@ -167,13 +165,14 @@ class Admin extends Controller
             'nameAccessories' => $_POST['nameUpAccessories'],
             'imgAccessories' => $linkImage,
             'priceAccessories' => intval($_POST['priceUpAccessories']),
-            'discountAccessories' => intval($_POST['discountUpAccessories'])
+            'discountAccessories' => intval($_POST['discountUpAccessories']),
+            'descriptionAccessories' => $_POST['descriptionUpAccessories'],
         ];
 
         $accessories = $this->Model('Accessories');
         $accessories->updateAccessoriesDB($upAccessories);
         echo "<script>alert('Cập nhật phụ kiện thành công');
-       window.location.assign('http://huysmartphone.xyz/admin/')</script>";
+      window.location.assign('http://huysmartphone.xyz/admin/')</script>";
     }
     public function deleteAccessories($id)
     {

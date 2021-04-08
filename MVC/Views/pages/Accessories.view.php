@@ -1,5 +1,5 @@
 <div class="container">
-    <!-- Smartphone -->
+    <!-- Accessories -->
     <div class="mb-4 card p-2" id="#productAccessories">
         <div>
             <h4>Phụ kiện</h4>
@@ -9,6 +9,7 @@
             <!-- open while loop -->
             <?php
             while ($row = $data['Accessories']->fetch_assoc()) {
+                include 'ModalDetailAccessories.view.php';
             ?>
 
                 <div class="col-md-3 mb-5">
@@ -33,14 +34,15 @@
                                 ?>
                             </b>
                             <div>
-                                <a href="Home/DetailAccessories/<?php echo $row['IDaccessories']?>">
-                                    <button class="float-left btn btn-rounded btn-info waves-effect">
-                                        <i class="fa fa-info" aria-hidden="true"></i>
+                                <button class="float-left btn btn-rounded btn-info waves-effect" 
+                                data-toggle="modal" data-target="#ModalAccessories<?php echo $row['IDaccessories']?>">
+                                    <i class="fa fa-info" aria-hidden="true"></i>
+                                </button>
+                                <a href="Cart/addToCartAccessories/<?php echo $row['IDaccessories']?>">
+                                    <button type='submit' class="float-right btn btn-warning waves-effect">
+                                        <i class="fas fa-cart-plus"></i><b>Thêm vào giỏ</b>
                                     </button>
                                 </a>
-                                <button class="float-right btn btn-warning waves-effect">
-                                    <i class="fas fa-cart-plus"></i><b>Thêm vào giỏ</b>
-                                </button>
                             </div>
 
                         </div>
