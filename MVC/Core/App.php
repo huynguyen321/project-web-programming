@@ -12,7 +12,7 @@ class App
     {
         $url = $this->processURL();
         // process controller
-        
+
         if (file_exists('./MVC/Controllers/' . $url[0] . '.ctrl.php')) {
             $this->controller = $url[0];
             require_once './MVC/Controllers/' . $url[0] . '.ctrl.php';
@@ -22,7 +22,6 @@ class App
         } else {
             require_once './MVC/Controllers/Error.ctrl.php';
         }
-        
         $this->controller = new $this->controller;
 
         // process Action
@@ -32,6 +31,7 @@ class App
                 unset($url[1]);
             } else {
                 require_once './MVC/Controllers/Error.ctrl.php';
+                exit;
             }
         }
 

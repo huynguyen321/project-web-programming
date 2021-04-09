@@ -24,8 +24,18 @@
     <link rel="stylesheet" href="http://huysmartphone.xyz/public/assets/mdb5/css/bootstrap.min.css" />
     <link rel="stylesheet" href="http://huysmartphone.xyz/public/assets/mdb5/css/mdb-pro.min.css" />
     <link rel="stylesheet" href="http://huysmartphone.xyz/public/assets/mdb5/css/mdb.ecommerce.min.css" />
-    <script type="text/javascript" src="http://huysmartphone.xyz/public/assets/mdb5/js/mdb.min.js"></script>
-    <!-- self -->
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script src="http://huysmartphone.xyz/public/assets/mdb5/js/jquery-3.4.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <!-- <script type="text/javascript" src="http://huysmartphone.xyz/public/assets/mdb5/js/popper.min.js"></script> -->
+    <!-- Bootstrap core JavaScript -->
+    <!-- <script type="text/javascript" src="http://huysmartphone.xyz/public/assets/mdb5/js/bootstrap.js"></script> -->
+    <!-- MDB core JavaScript -->
+    <!-- <script type="text/javascript" src="http://huysmartphone.xyz/public/assets/mdb5/js/mdb.min.js"></script> -->
+    <!-- MDB Ecommerce JavaScript -->
+    <!-- <script type="text/javascript" src="http://huysmartphone.xyz/public/assets/mdb5/js/mdb.ecommerce.min.js"></script> -->
+    <!-- self custom-->
     <link rel="stylesheet" href="http://huysmartphone.xyz/public/assets/css/style.css">
 
 </head>
@@ -42,10 +52,10 @@
         <!-- Navbar -->
         <nav class="navbar navbar-expand-md navbar-light scrolling-navbar navbar-transparent">
             <a class="navbar-brand text-center" href="http://huysmartphone.xyz" style="font-weight: bold; font-size: 20px;color: #fff1a1">
-                <i class="fa fa-home" aria-hidden="true"></i> Trang chủ
+                <i class="fa fa-home" aria-hidden="tru"></i> Trang chủ
             </a>
-            <form action="" method="post" class="searchBox navbar-brand">
-                <input class="searchInput" type="text" name="" placeholder="Bạn cần tìm gì?">
+            <form action="http://huysmartphone.xyz/home/search" method="post" class="searchBox navbar-brand">
+                <input class="searchInput" type="text" name="Search" placeholder="Bạn cần tìm gì?">
                 <button class="searchButton">
                     <i class="fa fa-search" aria-hidden="true"></i>
                 </button>
@@ -56,14 +66,19 @@
                 <i class="fa fa-bars" aria-hidden="true"></i>
             </button>
 
-            <!-- Links -->
+            <!-- Right -->
             <div class="collapse navbar-collapse" id="reponsiveMenu">
 
-                <!-- Right -->
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item text-center">
-                        <a href="#!" class="nav-link navbar-link-2 waves-effect">
-                            <span class="badge badge-pill red">0</span>
+                        <a href="Cart/ShoppingCart" class="nav-link navbar-link-2 waves-effect">
+                            <span class="badge badge-pill red" id="qty">
+                                <?php
+                                if (isset($_SESSION['Cart'])) {
+                                    echo $_SESSION['Cart'];
+                                } else echo 0;
+                                ?>
+                            </span>
                             <i class="fas fa-shopping-cart pl-0"></i>
                         </a>
                     </li>
@@ -72,9 +87,10 @@
                             <i class="fa fa-mobile-alt" aria-hidden="true"></i>
                             Điện thoại
                         </a>
-                        <a class="nav-link dropdown-toggle waves-effect" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="padding:0; margin:10px 10px 15px 0;">
+                        <a class="dropbtn waves-effect" role="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-caret-down" aria-hidden="true"></i>
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu">
                             <table>
                                 <tr>
                                     <td><a class="dropdown-item" href="#"><img src="http://huysmartphone.xyz/public/assets/img/logo-brand/iPhone.jpg" alt="product" width="108px"></a></td>
@@ -98,16 +114,31 @@
                             <i class="fa fa-headphones" aria-hidden="true"></i>
                             Phụ kiện </a>
                     </li>
-                    <li class="nav-item text-center">
-                        <a class="nav-link waves-effect" id="signUp2" data-toggle="modal" data-target="#SignInSignUpModal">
-                            Đăng ký
-                        </a>
-                    </li>
-                    <li class="nav-item pl-2 mb-2 mb-md-0">
-                        <a type="button" class="nav-link btn btn-outline-secondary btn-rounded btn-navbar waves-effect waves-light" id="signIn2"
-                        data-toggle="modal" data-target="#SignInSignUpModal">
-                            ĐĂNG NHẬP</a>
-                    </li>
+                    <?php
+
+                    if (isset($_SESSION['User'])) {
+
+                        echo '<li class="nav-item text-center">
+                            <a class="nav-link waves-effect">
+                            <i class="fa fa-user-circle" aria-hidden="true"></i>' . $_SESSION['User']['Name'] . '
+                            </a>
+                        </li>
+                        <li class="nav-item text-center">
+                            <a href="http://huysmartphone.xyz/User/SignOut" class="nav-link waves-effect">
+                            <i class="fas fa-sign-out-alt" aria-hidden="true"></i>Đăng xuất
+                            </a>
+                        </li>';
+                    } else
+                        echo '<li class="nav-item text-center">
+                                <a class="nav-link waves-effect" id="signUp2" data-toggle="modal" data-target="#SignInSignUpModal">
+                                Đăng ký
+                                </a>
+                            </li>
+                            <li class="nav-item pl-2 mb-2 mb-md-0">
+                                <a type="button" class="nav-link btn btn-outline-secondary btn-rounded btn-navbar waves-effect waves-light" id="signIn2" data-toggle="modal" data-target="#SignInSignUpModal">
+                                ĐĂNG NHẬP</a>
+                            </li>';
+                    ?>
                 </ul>
             </div>
 

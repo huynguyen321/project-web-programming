@@ -1,9 +1,9 @@
  <!-- Modal -->
- <div class="modal fade" id="ModalSmartphone<?php echo $row['IDphone'] . $row['Ram'] . $row['Rom'] ?>" tabindex="-1" role="dialog" aria-labelledby="ModalSmartphoneLabel">
+ <div class="modal fade" id="ModalAccessories<?php echo $row['IDaccessories']?>" tabindex="-1" role="dialog" aria-labelledby="ModalAccessoriesLabel">
      <div class="modal-dialog" role="document">
          <div class="modal-content" style="width: 50vw;">
              <div class="modal-header">
-                 <h5 class="modal-title" id="ModalSmartphoneLabel">Chi tiết sản phẩm</h5>
+                 <h5 class="modal-title" id="ModalAccessoriesLabel">Chi tiết sản phẩm</h5>
                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                      <span aria-hidden="true">&times;</span>
                  </button>
@@ -109,25 +109,7 @@
 
                      </div>
                      <div class="col-md-6 col-0">
-                         <h5><?php echo $row['PhoneName'] ?></h5>
-                         <p class="mb-2 text-muted text-uppercase small"><?php echo $row['Brand'] ?></p>
-                         <ul class="rating">
-                             <?php
-                                $vote = '';
-                                if ($row['Vote'] == 1 || $row['Vote'] == 2 || $row['Vote'] == 3 || $row['Vote'] == 4 || $row['Vote'] == 5) {
-                                    for ($i = 0; $i < $row['Vote']; $i++) {
-                                        $vote = $vote . '<li><i class="fas fa-star fa-sm text-warning"></i></li>';
-                                    }
-                                } else {
-                                    for ($i = 0; $i < ($row['Vote'] - 0.5); $i++) {
-                                        $vote = $vote . '<li><i class="fas fa-star fa-sm text-warning"></i></li>';
-                                    }
-                                    $vote = $vote . '<li><i class="fas fa-star-half fa-sm text-warning"></i></li>';
-                                };
-                                echo $vote;
-                                ?>
-                         </ul>
-
+                         <h5><?php echo $row['AccessoriesName'] ?></h5>
                          <p>
                              <span class="mr-1">
                                  <b style="color: red">
@@ -139,29 +121,10 @@
                                  </b>
                              </span>
                          </p>
-                         <div class="table-responsive">
-                             <table class="table table-sm table-borderless mb-0">
-                                 <tbody>
-                                     <tr>
-                                         <th class="pl-0 w-25" scope="row"><strong>Ram:</strong></th>
-                                         <td><?php echo $row['Ram'] ?></td>
-                                     </tr>
-                                     <tr>
-                                         <th class="pl-0 w-25" scope="row"><strong>Rom</strong></th>
-                                         <td><?php echo $row['Rom'] ?></td>
-                                     </tr>
-                                     <tr>
-                                         <th class="pl-0 w-25" scope="row"><strong>Hệ điều hành</strong></th>
-                                         <td>
-                                         <td><?php echo $row['OS'] ?></td>
-                                         </td>
-                                     </tr>
-                                 </tbody>
-                             </table>
-                         </div>
+                         <p><?php echo $row['Description']?></p>
                          <hr>
                          <div class="table-responsive mb-2">
-                             <form action="Cart/addToCartSmartphone/<?php echo $row['IDphone']?>" method="post">
+                             <form action="Cart/addToCartSmartphone/<?php echo $row['IDaccessories']?>" method="post">
                                  <table class="table table-sm table-borderless">
                                      <tbody>
                                          <tr>
@@ -171,14 +134,14 @@
                                              <td class="pl-0">
                                                  <div class="def-number-input number-input safari_only mb-0">
                                                      <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
-                                                     <input class="quantity" min="0" name="qtyPhone" value="1" type="number">
+                                                     <input class="quantity" min="0" name="quantity" value="1" type="number">
                                                      <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
                                                  </div>
                                              </td>
                                          </tr>
                                      </tbody>
                                  </table>
-                                 <a href="Cart/BuyPhone/<?php echo $row['IDphone']?>">
+                                 <a href="Cart/Buy/<?php echo $row['IDaccessories']?>">
                                      <button type="button" class="btn btn-primary btn-md mr-1 mb-2 waves-effect waves-light">
                                          Mua ngay
                                      </button>
