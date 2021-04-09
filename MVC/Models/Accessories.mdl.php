@@ -55,4 +55,9 @@ class Accessories extends Connect
         $sql = "call updateIDaccessories;";
         $this->conn->query($sql);
     }
+    public function searchAccessoriesDB($nameToSearch)
+    {
+        $sql = " call searchAccessories('".$nameToSearch."');";
+        return $this->conn->query($sql);
+    }
 }

@@ -78,4 +78,10 @@ class Smartphone extends Connect
         $sql = "call updateIDsmartphone;";
         $this->conn->query($sql);
     }
+    public function searchSmartphoneDB($nameToSearch)
+    {
+        $sql = " call searchSmartphone('".$nameToSearch."');";
+        return $this->conn->query($sql);
+    }
+    
 }

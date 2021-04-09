@@ -161,7 +161,7 @@
                          </div>
                          <hr>
                          <div class="table-responsive mb-2">
-                             <form action="Cart/addToCartSmartphone/<?php echo $row['IDphone'] . '/' . $row['Ram'] . '/' .  $row['Rom'] ?>" method="post">
+                             <form action="Cart/addToCartSmartphone/<?php echo $row['IDphone']?>" method="post">
                                  <table class="table table-sm table-borderless">
                                      <tbody>
                                          <tr>
@@ -178,7 +178,7 @@
                                          </tr>
                                      </tbody>
                                  </table>
-                                 <a href="Cart/Buy/<?php echo $row['IDphone'].'/'.$_POST['qtyPhone']?>">
+                                 <a href="Cart/BuyPhone/<?php echo $row['IDphone']?>">
                                      <button type="button" class="btn btn-primary btn-md mr-1 mb-2 waves-effect waves-light">
                                          Mua ngay
                                      </button>

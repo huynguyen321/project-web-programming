@@ -77,7 +77,7 @@
     <div class="copyright-info">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-7">
                     <p>
                         ©2021 Copyright by
                         <a href="#">
@@ -85,7 +85,7 @@
                         </a>
                     </p>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-5">
                     <ul class="social-icon">
                         <li>
                             <a href="mailto:huy.nguyen22@student.passerellesnumeriques.org" class="google-plus">

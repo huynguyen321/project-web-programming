@@ -54,8 +54,8 @@
             <a class="navbar-brand text-center" href="http://huysmartphone.xyz" style="font-weight: bold; font-size: 20px;color: #fff1a1">
                 <i class="fa fa-home" aria-hidden="tru"></i> Trang chủ
             </a>
-            <form action="Search" method="post" class="searchBox navbar-brand">
-                <input class="searchInput" type="text" name="" placeholder="Bạn cần tìm gì?">
+            <form action="http://huysmartphone.xyz/home/search" method="post" class="searchBox navbar-brand">
+                <input class="searchInput" type="text" name="Search" placeholder="Bạn cần tìm gì?">
                 <button class="searchButton">
                     <i class="fa fa-search" aria-hidden="true"></i>
                 </button>

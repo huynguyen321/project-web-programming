@@ -6,6 +6,11 @@ class Users extends Connect
         $sql = "SELECT * from Users;";
         return $this->conn->query($sql);
     }
+    public function getOneUser($username)
+    {
+        $sql = "SELECT * from Users where userName = '".$username."';";
+        return $this->conn->query($sql);
+    }
     // Sign Up
     public function createNewAcc($newUser)
     {
@@ -30,15 +35,19 @@ class Users extends Connect
     // Sign In
     public function checkUser($user)
     {
-        $sql = "select UserName,Password,Name,IDuser from Users
+        $sql = "select UserName,Password,Name,IDuser,Blocked from Users
        where userName = '" . $user['username'] . "'
        and Password = '" . $user['password'] . "';";
         $result = $this->conn->query($sql);
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                $_SESSION['User'] = $row;
-                echo "OK";
-                return true;
+                if($row['Blocked'] == 1){
+                    echo "<script>alert('Tài khoản của bạn đã bị khóa!\nVui lòng liên lạc với admin để mở lại!');</script>";
+                    return false;
+                }else{
+                    $_SESSION['User'] = $row;
+                    return true;
+                }
             }
         } else {
             echo "<script>alert('Đăng nhập thất bại!\nSai tên đăng nhập hoặc mật khẩu!');</script>";

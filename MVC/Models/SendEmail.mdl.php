@@ -86,4 +86,44 @@ class SendEmail
             $alert = '<p>' . $e->getMessage() . '</p>';
         }
     }
+    public function SendEmailPayment($emailUser)
+    {
+        require_once 'MVC/phpmailer/Exception.php';
+        require_once 'MVC/phpmailer/PHPMailer.php';
+        require_once 'MVC/phpmailer/SMTP.php';
+        $mail = new PHPMailer(true);
+
+        try {
+            $mail->isSMTP();
+            $mail->Host = 'smtp.gmail.com';
+            $mail->SMTPAuth = true;
+            $mail->Username = 'tenlahuy4.0@gmail.com'; // Gmail address which you want to use as SMTP server
+            $mail->Password = 'Nagamaru'; // Gmail address Password
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->Port = '587';
+            $mail->setFrom('tenlahuy4.0@gmail.com'); // Gmail address which you used as SMTP server
+            $mail->addAddress($emailUser); // Email address where you want to receive emails (you can use any of your gmail address including the gmail address which you used as SMTP server)
+            $mail->isHTML(true);
+            $mail->Subject = 'Email Infrom Order Product Success';
+
+
+            
+            $permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyz';
+            $productKey = substr(str_shuffle($permitted_chars), 0, 12);
+            
+            $mail->Body =
+                "<div>
+                <p><h1>Nga Huy Smartphone</h1></p>
+                <p><h2>Cảm ơn bạn đã đặt hàng, hàng của bạn sẽ tới trong 7 ngày nữa</h2></p>
+                <p> Mã đơn hàng.</p>
+                <p>" .$productKey . "</p>
+                </div>";
+
+            $mail->send();
+            echo "<script>alert('Đặt hàng thành công!')
+            window.location.assign('http://huysmartphone.xyz')</script>";
+        } catch (Exception $e) {
+            $alert = '<p>' . $e->getMessage() . '</p>';
+        }
+    }
 }

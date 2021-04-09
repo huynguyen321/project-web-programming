@@ -59,9 +59,10 @@ class User extends Controller
         if ($check->checkUser($user)) {
             echo "<script>alert('Đăng nhập thành công!');
             window.location.assign('http://huysmartphone.xyz');</script>";
-        }
-        echo "<script>alert('Đăng nhập thất bại!\nSai tên đăng nhập hoặc mật khẩu!');
+        } else {
+            echo "<script>alert('Đăng nhập thất bại! Sai tên đăng nhập hoặc mật khẩu!');
             window.location.assign('http://huysmartphone.xyz')</script>";
+        }
     }
     public function SignOut()
     {
@@ -69,13 +70,14 @@ class User extends Controller
         $signOut->logOut();
         echo "<script>window.location.assign('http://huysmartphone.xyz')</script>";
     }
-    public function blockUser(){
+    public function blockUser()
+    {
         $user = func_get_args();
         $signOut = $this->Model('Users');
-        $signOut->block($user[0],$user[1]);
-        if($user[1]==0){
+        $signOut->block($user[0], $user[1]);
+        if ($user[1] == 0) {
             echo "<script>alert('Block người dùng có IDuser = $user[0] thành công')</script>";
-        }else echo "<script>alert('Mở Block người dùng có IDuser = $user[0] thành công')</script>";
+        } else echo "<script>alert('Mở Block người dùng có IDuser = $user[0] thành công')</script>";
         echo "<script>window.location.assign('http://huysmartphone.xyz/admin/')</script>";
     }
 }

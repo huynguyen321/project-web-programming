@@ -5,9 +5,9 @@
       <div class="card wish-list mb-3">
         <div class="card-body">
           <h5 class="mb-4">Giỏ hàng: </h5>
-          <?php
+          <?php          
           if (isset($_SESSION['DetailCart'])) {
-            foreach ($_SESSION['DetailCart'] as $i) {
+            for($i=0; $i< count($_SESSION['DetailCart']);$i++) {
           ?>
               <div class="row mb-4">
                 <div class="col-md-5 col-lg-3 col-xl-3">
@@ -31,7 +31,7 @@
 
                       <div class="def-number-input number-input safari_only mb-0 w-100">
                         <button class='btn btn-amber' onclick="this.parentNode.querySelector('input[type=number]').stepDown()">-</button>
-                        <input class="quantity" min="0" name="quantity" id="qtyPhone<?php echo $_SESSION['DetailCart'][$i]['IDphone'] ?>" value=<?php echo $_SESSION['DetailCart'][$i]['QtyPhone'] ?> type="number">
+                        <input class="quantity" min="0" name="quantity" id="qtyPhone" value=<?php echo $_SESSION['DetailCart'][$i]['QtyPhone'] ?> type="number">
                         <button class='btn btn-amber' onclick="this.parentNode.querySelector('input[type=number]').stepUp()">+</button>
                       </div>
                     </div>
@@ -42,11 +42,9 @@
                       <p class="mb-0"><span><strong>
                             <?php
                             if ($_SESSION['DetailCart'][$i]['Detail']['Discount'] == 0) {
-                              echo $_SESSION['DetailCart'][$i]['Detail']['Price'];
-                              echo '<script>price['.$i.'] = '.$_SESSION['DetailCart'][$i]['Detail']['Price'].'</script>';
+                              echo  number_format($_SESSION['DetailCart'][$i]['Detail']['Price']);
                             } else {
-                              echo $_SESSION['DetailCart'][$i]['Detail']['Discount'];
-                              echo '<script>price['.$i.'] = '.$_SESSION['DetailCart'][$i]['Detail']['Discount'].'</script>';
+                              echo  number_format($_SESSION['DetailCart'][$i]['Detail']['Discount']);
                             }
                             ?></strong></span></p>
                     </div>

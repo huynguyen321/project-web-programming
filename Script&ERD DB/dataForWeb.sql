@@ -157,7 +157,7 @@ begin
 if lower(namePhone) = 'apple' then set namePhone = 'iPhone';
  end if;
 set namePhone = concat(namePhone,"*");
-	select s.IDphone , s.PhoneName, b.Brand, RAM.RAM, ROM.ROM, OS.OS, s.Price, s.Discount, s.Image, s.Vote 
+	select s.IDphone , s.PhoneName, b.Brand, RAM.RAM as Ram,ROM.ROM as Rom , OS.OS, s.Price, s.Discount, s.Image, s.Vote 
 		from Smartphone s, Brand b, ROM, RAM, OS
 		where 
         MATCH(PhoneName) AGAINST(namePhone IN BOOLEAN MODE)
@@ -273,4 +273,4 @@ foreign key (IDuser) references Users(IDuser) ON DELETE CASCADE ON UPDATE CASCAD
 -- delimiter ;
 
 -- call updateIDslider();
-select * from accessories;
+SELECT * from Users where username = 'Huy';
