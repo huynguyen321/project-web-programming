@@ -51,6 +51,7 @@ class Users extends Connect
         unset($_SESSION['User']);
         unset($_SESSION['ProducInCart']);
         unset($_SESSION['Cart']);
+        unset($_SESSION['DetailCart']);
     }
     public function block($IDuser, $blockStatus)
     {

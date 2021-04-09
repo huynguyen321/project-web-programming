@@ -35,7 +35,7 @@
                     <td>" . $row['Rom'] . "</td>
                     <th>" . $row['Vote'] . "</th>
                     <td>
-                        <button type='button' onclick='update(" . $row['IDphone'] . ")' class='btn btn-outline-danger' data-toggle='modal' data-target='#updateSmartphone'><i class='fas fa-cogs'> </i></button>
+                        <button type='button' onclick='updateSmartphone(". $row['IDphone'] . ")' class='btn btn-outline-danger' data-toggle='modal' data-target='#updateSmartphone'><i class='fas fa-cogs'> </i></button>
                        <a href='http://huysmartphone.xyz/Admin/deleteSmartphone/" . $row['IDphone'] . "'><button type='button' name='deleteSmartphone' class='btn btn-out-warning'> <i class='fas fa-trash'> </i></button></a>
                     </td>
                     </tr>";
@@ -141,7 +141,8 @@
     </div>
 
     <script>
-        function update(key) {
+        function updateSmartphone(key) {
+            console.log(tempPhone[0]['IDphone'])
             $("#idUpPhone").val(key);
             key--;
             $("#nameUpPhone").val(tempPhone[key]['PhoneName']);
@@ -266,6 +267,8 @@
                     $('#voteUpPhone option[value = "5"]').attr('selected', 'selected');
                     break;
             }
+
+            console.log('sad');
         }
     </script>
     <!-- Modal updateSmartphone-->

@@ -13,10 +13,10 @@ class Smartphone extends Connect
         $sql = "SELECT * from viewSmartphone where IDphone = $IDsmartphone;";
         return $this->conn->query($sql);
     }
-    public function getOneSmartphone($smartphone)
+    public function getOneSmartphone($IDsmartphone)
     {
         $sql = "SELECT * from viewSmartphone
-         where IDphone = $smartphone[0];";
+         where IDphone = $IDsmartphone;";
         return $this->conn->query($sql);
     }
     public function addSmartphoneDB($newSmartphone)

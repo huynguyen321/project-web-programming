@@ -27,7 +27,7 @@
                     <td>" . $row['Discount'] . "</td>
                     <td>" . $row['Description'] . "</td>
                     <td>
-                        <button type='button' onclick='update(" . $row['IDaccessories'] . ")' class='btn btn-outline-danger' data-toggle='modal' data-target='#updateAccessories'><i class='fas fa-cogs'> </i></button>
+                        <button type='button' onclick='updateAccessories(" . $row['IDaccessories'] . ")' class='btn btn-outline-danger' data-toggle='modal' data-target='#updateAccessories'><i class='fas fa-cogs'> </i></button>
                        <a href='http://huysmartphone.xyz/Admin/deleteAccessories/" . $row['IDaccessories'] . "'><button type='button' name='deleteAccessories' class='btn btn-out-warning'> <i class='fas fa-trash'> </i></button></a>
                     </td>
                     </tr>";
@@ -76,7 +76,7 @@
     </div>
 
     <script>
-        function update(key) {
+        function updateAccessories(key) {
             $("#idUpAccessories").val(key);
             key--;
             $("#nameUpAccessories").val(tempAccessories[key]['AccessoriesName']);

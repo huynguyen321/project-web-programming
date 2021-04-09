@@ -52,7 +52,7 @@
                                 data-toggle="modal" data-target="#ModalSmartphone<?php echo $row['IDphone'] . $row['Ram'] . $row['Rom']; ?>">
                                     <i class="fa fa-info" aria-hidden="true"></i>
                                 </button>
-                                <a href="Cart/addToCartSmartphone/<?php echo $row['IDphone']?>">
+                                <a href="Cart/addToCartSmartphone/<?php echo $row['IDphone']?>/1">
                                     <button type='submit' class="float-right btn btn-warning waves-effect">
                                         <i class="fas fa-cart-plus"></i><b>Thêm vào giỏ</b>
                                     </button>

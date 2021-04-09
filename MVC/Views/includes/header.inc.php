@@ -28,13 +28,13 @@
     <!-- JQuery -->
     <script src="http://huysmartphone.xyz/public/assets/mdb5/js/jquery-3.4.1.min.js"></script>
     <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="http://huysmartphone.xyz/public/assets/mdb5/js/popper.min.js"></script>
+    <!-- <script type="text/javascript" src="http://huysmartphone.xyz/public/assets/mdb5/js/popper.min.js"></script> -->
     <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="http://huysmartphone.xyz/public/assets/mdb5/js/bootstrap.js"></script>
+    <!-- <script type="text/javascript" src="http://huysmartphone.xyz/public/assets/mdb5/js/bootstrap.js"></script> -->
     <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="http://huysmartphone.xyz/public/assets/mdb5/js/mdb.min.js"></script>
+    <!-- <script type="text/javascript" src="http://huysmartphone.xyz/public/assets/mdb5/js/mdb.min.js"></script> -->
     <!-- MDB Ecommerce JavaScript -->
-    <script type="text/javascript" src="http://huysmartphone.xyz/public/assets/mdb5/js/mdb.ecommerce.min.js"></script>
+    <!-- <script type="text/javascript" src="http://huysmartphone.xyz/public/assets/mdb5/js/mdb.ecommerce.min.js"></script> -->
     <!-- self custom-->
     <link rel="stylesheet" href="http://huysmartphone.xyz/public/assets/css/style.css">
 
@@ -124,7 +124,7 @@
                             </a>
                         </li>
                         <li class="nav-item text-center">
-                            <a href="User/SignOut" class="nav-link waves-effect">
+                            <a href="http://huysmartphone.xyz/User/SignOut" class="nav-link waves-effect">
                             <i class="fas fa-sign-out-alt" aria-hidden="true"></i>Đăng xuất
                             </a>
                         </li>';

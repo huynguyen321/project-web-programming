@@ -171,14 +171,14 @@
                                              <td class="pl-0">
                                                  <div class="def-number-input number-input safari_only mb-0">
                                                      <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
-                                                     <input class="quantity" min="0" name="quantity" value="1" type="number">
+                                                     <input class="quantity" min="0" name="qtyPhone" value="1" type="number">
                                                      <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
                                                  </div>
                                              </td>
                                          </tr>
                                      </tbody>
                                  </table>
-                                 <a href="Cart/Buy/<?php echo $row['IDphone'] . '/' . $row['Ram'] . '/' .  $row['Rom'] ?>">
+                                 <a href="Cart/Buy/<?php echo $row['IDphone'].'/'.$_POST['qtyPhone']?>">
                                      <button type="button" class="btn btn-primary btn-md mr-1 mb-2 waves-effect waves-light">
                                          Mua ngay
                                      </button>
